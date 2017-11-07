@@ -1,0 +1,27 @@
+{
+    "name": "wafto/laravel-sepomex",
+    "description": "Servicio Postal Mexicano (Sepomex) laravel library",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.*"
+    },
+    "author": {
+        "name": "Aftab Hussain Miranda ",
+        "email": "wafto.mx@gmail.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aftab\\Sepomex\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aftab\\Sepomex\\SepomexServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
