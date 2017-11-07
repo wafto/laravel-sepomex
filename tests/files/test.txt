@@ -1,0 +1,405 @@
+Restrictive clause line (This file is used only for testing purposes)
+d_codigo|d_asenta|d_tipo_asenta|D_mnpio|d_estado|d_ciudad|d_CP|c_estado|c_oficina|c_CP|c_tipo_asenta|c_mnpio|id_asenta_cpcons|d_zona|c_cve_ciudad
+01000|San �ngel|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0001|Urbano|01
+01010|Los Alpes|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0005|Urbano|01
+01020|Guadalupe Inn|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0006|Urbano|01
+01030|Florida|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0010|Urbano|01
+11560|Polanco V Secci�n|Colonia|Miguel Hidalgo|Ciudad de M�xico|Ciudad de M�xico|11591|09|11591||09|016|2785|Urbano|11
+11580|Bosque de Chapultepec I Secci�n|Equipamiento|Miguel Hidalgo|Ciudad de M�xico|Ciudad de M�xico|11591|09|11591||17|016|1833|Urbano|11
+11590|Anzures|Colonia|Miguel Hidalgo|Ciudad de M�xico|Ciudad de M�xico|11591|09|11591||09|016|1838|Urbano|11
+66793|Los Pe�a|Rancher�a|Doctor Gonz�lez|Nuevo Le�n||66601|19|66601||29|016|4851|Rural|
+66800|Los Ramones|Pueblo|Los Ramones|Nuevo Le�n||66801|19|66801||28|042|1465|Urbano|
+66810|Hidalgo|Congregaci�n|Los Ramones|Nuevo Le�n||66801|19|66801||11|042|1467|Rural|
+66812|Facundo Gonz�lez (El Peine)|Pueblo|Los Ramones|Nuevo Le�n||66801|19|66801||28|042|1468|Rural|
+66820|Garza Gonzalez|Congregaci�n|Los Ramones|Nuevo Le�n||66801|19|66801||11|042|1469|Rural|
+67118|Villa Espa�ola|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1582|Urbano|04
+67118|Misi�n del Valle|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1578|Urbano|04
+67119|Jardines de San Rafael|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1524|Urbano|04
+67119|San Rafael|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1533|Urbano|04
+67119|Industrial Jardines San Rafael|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1583|Urbano|04
+67119|Praderas de San Rafael|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1579|Urbano|04
+67120|Adolfo Prieto|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1586|Urbano|04
+67120|Adolfo Prieto Sector 2|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1587|Urbano|04
+67120|La Luz|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1593|Urbano|04
+67120|H�rcules|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1592|Urbano|04
+67120|Leon XIII|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67121|19|67121||09|026|1594|Urbano|04
+67194|Bosques del Rey|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|4808|Urbano|04
+67194|Portales de la Silla 2do. Sector|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|5423|Urbano|04
+67194|Molino del Rey|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1870|Urbano|04
+67194|Lomas del Rey|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|0013|Urbano|04
+67194|Nosara Residencial|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|0004|Urbano|04
+67195|Valles de Guadalupe|Unidad habitacional|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||31|026|1879|Urbano|04
+67195|Villa Alegre|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1880|Urbano|04
+67195|Ciudad CROC|Unidad habitacional|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||31|026|1875|Urbano|04
+67195|La Silla|Parque industrial|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||26|026|1877|Urbano|04
+67195|Pedregal de Guadalupe|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|3146|Urbano|04
+67196|Valle del Sol|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1891|Urbano|04
+67196|Xochimilco|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1861|Urbano|04
+67196|Hacienda las Escobas|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|3690|Urbano|04
+67196|Portal de Xochimilco|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|3746|Urbano|04
+67196|Privadas de la Silla|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|5424|Urbano|04
+67196|Santa B�rbara|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|5425|Urbano|04
+67196|Rinc�n la Silla|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1783|Urbano|04
+67196|Jardines de Xochimilco|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1831|Urbano|04
+67197|Cortijo la Silla|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|3032|Urbano|04
+67197|Tierra Propia Sector 2|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1853|Urbano|04
+67197|Misi�n de la Silla|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|3036|Urbano|04
+67197|Tierra Propia Sector 1|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1852|Urbano|04
+67197|Valle de los Encinos|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1858|Urbano|04
+67197|Hacienda de Guadalupe|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1867|Urbano|04
+67198|Carmen Serd�n|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1821|Urbano|04
+67198|Nuevo Santa Mar�a|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|3792|Urbano|04
+67198|Fomerrey 3|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1827|Urbano|04
+67198|Santa Mar�a|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1848|Urbano|04
+67198|Acapulco|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1820|Urbano|04
+67198|Rinc�n de Guadalupe|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1878|Urbano|04
+67198|Scop|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1849|Urbano|04
+67199|Paseo de Guadalupe|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|5152|Urbano|04
+67199|SCT|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1890|Urbano|04
+67199|Los Independientes|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1887|Urbano|04
+67199|Hacienda la Silla|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1885|Urbano|04
+67200|Tamaulipas|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1851|Urbano|04
+67200|Puerta del Sol|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1842|Urbano|04
+67200|31 de Diciembre|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1854|Urbano|04
+67200|Ciudad Cnop|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1894|Urbano|04
+67200|Evoluci�n|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|1826|Urbano|04
+67200|Nuevo Tamaulipas|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|3744|Urbano|04
+67202|Nuevo Le�n|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1840|Urbano|04
+67202|La Trinidad|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1896|Urbano|04
+67202|Residencial Santa Mar�a|Fraccionamiento|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||21|026|3692|Urbano|04
+67202|5 de Enero|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|4806|Urbano|04
+67202|Sandra Saavedra|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|4804|Urbano|04
+67202|Miguel Hidalgo|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|4816|Urbano|04
+67203|Hacienda San Sebasti�n|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1886|Urbano|04
+67203|Mar�a Teresa|Colonia|Guadalupe|Nuevo Le�n|Guadalupe|67181|19|67181||09|026|1888|Urbano|04
+85420|La Laguna|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3109|Urbano|06
+85420|Bur�crata|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|1223|Urbano|06
+85420|El Cielo|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3108|Urbano|06
+85423|El Diamante|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|2988|Urbano|06
+85423|Arrecifes|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|2100|Urbano|06
+85423|Playa Vista I|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|2999|Urbano|06
+85423|Cerrada de Las Cabrillas|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3001|Urbano|06
+85423|Valle del Mar|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3325|Urbano|06
+85423|Atardeceres|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|2102|Urbano|06
+85423|Carlos Romero Deschamps|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|1952|Urbano|06
+85423|Villas Del Puerto III|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|2108|Urbano|06
+85423|Monte Bello|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|2947|Urbano|06
+85423|Fuente de Piedra|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|0018|Urbano|06
+85423|Valle Bonito|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|2099|Urbano|06
+85423|Misioneros|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|2101|Urbano|06
+85423|Playa Vista II|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3000|Urbano|06
+85423|Villa Zarina|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|0020|Urbano|06
+85423|De Las Praderas|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|0500|Urbano|06
+85423|Villa del Mar|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|2987|Urbano|06
+85423|Diamante II|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3334|Urbano|06
+85423|Las Acacias|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|0019|Urbano|06
+85499|Campestre|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3099|Urbano|06
+85499|Tetabiate|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|2860|Urbano|06
+85499|Loma Bonita|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|0503|Urbano|06
+85499|El Centinela|Colonia|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||09|029|1266|Urbano|06
+85499|H�roes 13 de Julio|Fraccionamiento|Guaymas|Sonora|Heroica Guaymas|85401|26|85401||21|029|3003|Urbano|06
+85500|Santa Clara|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1289|Rural|
+85500|Santa M�nica|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1279|Rural|
+85500|El Valiente Kil�metro Veinte (Libramiento)|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1287|Rural|
+85500|La Cuadrita|Pueblo|Guaymas|Sonora||85301|26|85301||28|029|1284|Rural|
+85500|Lomas de Colosio|Ejido|Guaymas|Sonora||85301|26|85301||15|029|3339|Rural|
+85500|La Herradura|Fraccionamiento|Guaymas|Sonora||85301|26|85301||21|029|3329|Rural|
+85500|La Salvaci�n|Ejido|Guaymas|Sonora||85301|26|85301||15|029|0488|Rural|
+85500|El Sue�o|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1282|Rural|
+85500|San Jos� de Guaymas|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1285|Rural|
+85500|Ort�z|Estaci�n|Guaymas|Sonora||85301|26|85301||16|029|1268|Rural|
+85500|Aranjuez|Fraccionamiento|Guaymas|Sonora||85301|26|85301||21|029|0023|Rural|
+85500|Campo Nuevo|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1281|Rural|
+85500|Buenos Aires|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1286|Rural|
+85503|Costa del Mar|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0022|Rural|
+85503|La Manga (Campo Pesquero la Manga)|Rancher�a|Guaymas|Sonora||85504|26|85504||29|029|0015|Rural|
+85503|San Carlos Plaza|Equipamiento|Guaymas|Sonora||85504|26|85504||17|029|0014|Rural|
+85503|Puesta del Sol|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0026|Rural|
+85503|Residencial Villas California|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0029|Rural|
+85503|La Manga Dos|Rancher�a|Guaymas|Sonora||85504|26|85504||29|029|0016|Rural|
+85503|Los Arrieros|Rancher�a|Guaymas|Sonora||85504|26|85504||29|029|0004|Rural|
+85505|General L�zaro C�rdenas|Ejido|Guaymas|Sonora||85301|26|85301||15|029|3007|Rural|
+85505|Palo Verde|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1273|Rural|
+85505|General Felipe �ngeles|Ejido|Guaymas|Sonora||85301|26|85301||15|029|0003|Rural|
+85505|Punta de Agua|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|0005|Rural|
+85505|La Misa|Pueblo|Guaymas|Sonora||85301|26|85301||28|029|1272|Rural|
+85505|Profesor Graciano S�nchez|Ejido|Guaymas|Sonora||85301|26|85301||15|029|2935|Rural|
+85506|Hacienda de Cortez|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0009|Urbano|
+85506|Ranchito Campestre|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1911|Rural|
+85506|Residencial Tetakawi|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2958|Urbano|
+85506|Cosmos|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0008|Rural|
+85506|De Anza|Unidad habitacional|Guaymas|Sonora||85504|26|85504||31|029|0030|Rural|
+85506|Bah�a|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1908|Rural|
+85506|Loma Bonita|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0010|Rural|
+85506|Residencial Del Mar Vista|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0011|Rural|
+85506|Villas de Tetakawi|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2946|Rural|
+85506|Triana|Condominio|Guaymas|Sonora||85504|26|85504||10|029|2963|Urbano|
+85506|Villas de San Carlos|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|3358|Urbano|
+85506|Villa Mexicana|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0012|Urbano|
+85506|Cantera Residencial|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|0027|Urbano|
+85506|Villa Hermosa|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1906|Rural|
+85506|Parque Tecalai|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2960|Urbano|
+85506|Palmares|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2972|Urbano|
+85506|Caracol Pen�nsula|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1909|Rural|
+85506|Conquistador|Condominio|Guaymas|Sonora||85504|26|85504||10|029|2961|Urbano|
+85506|Royal Golf Club|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2974|Urbano|
+85506|Solimar|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|3375|Urbano|
+85506|El Crest�n|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2207|Rural|
+85506|Lomas de San Carlos|Colonia|Guaymas|Sonora||85504|26|85504||09|029|2251|Rural|
+85506|Villas Sirenas|Condominio|Guaymas|Sonora||85504|26|85504||10|029|2962|Urbano|
+85506|Sector Sexta Secci�n|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2975|Urbano|
+85506|Tierra Bonita|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|3345|Rural|
+85506|Lomas del Mar|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|3310|Rural|
+85506|Country Club|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1905|Rural|
+85506|Caracol Tur�stico|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1910|Rural|
+85506|Los Arcos|Colonia|Guaymas|Sonora||85504|26|85504||09|029|1912|Rural|
+85506|Sector La Costa|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2959|Urbano|
+85506|Colinas del Country|Fraccionamiento|Guaymas|Sonora||85504|26|85504||21|029|2973|Urbano|
+85507|Francisco M�rquez|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1276|Rural|
+85507|Guadalupe Victoria|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1277|Rural|
+85507|Triunfo de Santa Rosa|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1280|Rural|
+85507|Baugo (Gu�simas)|Pueblo|Guaymas|Sonora||85301|26|85301||28|029|0013|Rural|
+85507|El Yaqui|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1275|Rural|
+85507|Adolfo de la Huerta|Ejido|Guaymas|Sonora||85301|26|85301||15|029|0021|Rural|
+85507|Nicol�s Bravo|Rancher�a|Guaymas|Sonora||85301|26|85301||29|029|1278|Rural|
+85507|Gu�simas (De Belem)|Pueblo|Guaymas|Sonora||85301|26|85301||28|029|1293|Rural|
+85508|San Marcial|Congregaci�n|Guaymas|Sonora||85401|26|85401||11|029|1270|Rural|
+85509|San Germ�n|Rancher�a|Guaymas|Sonora||85401|26|85401||29|029|1288|Rural|
+85510|Estaci�n Oroz (Oroz)|Estaci�n|Guaymas|Sonora||85001|26|85001||16|029|1296|Rural|
+85510|Vicam|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|1291|Rural|
+85513|V�cam Pueblo|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|0017|Rural|
+85513|Huiribis|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|1295|Rural|
+85513|Chumampaco|Rancher�a|Guaymas|Sonora||85001|26|85001||29|029|1299|Rural|
+85513|Guasimitas|Ejido|Guaymas|Sonora||85001|26|85001||15|029|2936|Rural|
+85513|Potam|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|1297|Rural|
+85513|Lencho|Estaci�n|Guaymas|Sonora||85001|26|85001||16|029|3321|Rural|
+85513|Casas Blancas|Estaci�n|Guaymas|Sonora||85001|26|85001||16|029|1290|Rural|
+85513|Rahun|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|1298|Rural|
+85513|El Castillo|Rancher�a|Guaymas|Sonora||85001|26|85001||29|029|1300|Rural|
+85513|T�rim|Pueblo|Guaymas|Sonora||85001|26|85001||28|029|1305|Rural|
+85513|Compuertas|Ejido|Guaymas|Sonora||85001|26|85001||15|029|2934|Rural|
+85514|Campo Bloque 427|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2327|Rural|
+85514|Campo de Manuel Romero|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2337|Rural|
+85514|Urbalejo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2323|Rural|
+85514|Bloque 325 Esquina 300 y 23|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2326|Rural|
+85514|Los Dom�nguez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2335|Rural|
+85514|Campo Humberto Quintana Loya|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2348|Rural|
+85514|Carmen V�zquez Cazares|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2352|Rural|
+85514|La Coyotera|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|2336|Rural|
+85514|El Nuevo Castillo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2331|Rural|
+85514|Campo La 21|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2340|Rural|
+85514|Manuel F�lix|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2346|Rural|
+85514|Bruno Parra (Calle Cinco)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2354|Rural|
+85514|Palo Verde|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2328|Rural|
+85514|Campo de Miguel Olea|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2341|Rural|
+85514|La Trecientos y Quince|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2344|Rural|
+85514|Pueblo Nuevo|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1303|Rural|
+85514|Tapirito|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2324|Rural|
+85514|El Desag�e|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1301|Rural|
+85514|Calle Base y Veintiuno|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2322|Rural|
+85514|Beatriz Herrera|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2334|Rural|
+85514|Campo 425|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2338|Rural|
+85514|Bachoco (Postura Granja Pesada)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2343|Rural|
+85514|Juan Le�n Villegas (Bloque 325)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2325|Rural|
+85514|El Perico|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2330|Rural|
+85514|Campo de Polo Castillo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2333|Rural|
+85514|Campo Agr�cola Ejido Chumampaco|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2347|Rural|
+85514|Campo de Abelardo H Paredes A (Bloque 521)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2349|Rural|
+85514|Hilario Calder�n (Calle Cinco y 19)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2351|Rural|
+85514|Campo Calder�n|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2355|Rural|
+85514|Mar�a Luisa Ochoa B�rquez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2356|Rural|
+85514|La Curva|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1302|Rural|
+85514|Singapur|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1310|Rural|
+85514|La Tinajera|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2329|Rural|
+85514|Campo de Rosario Serrano|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2332|Rural|
+85514|Luz Maria Ricaud|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2339|Rural|
+85514|Jes�s G�mez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2342|Rural|
+85514|Block 521|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2350|Rural|
+85514|Campo de Esteban Lopez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2353|Rural|
+85515|El Rastro|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1915|Rural|
+85515|Rosendo Monta�o|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1914|Rural|
+85515|El Gallito|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1951|Rural|
+85515|San Ignacio R�o Muerto|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1309|Rural|
+85515|La Arboleda|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1917|Rural|
+85515|Doctores|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|0001|Urbano|
+85515|Llano de Zaragoza|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|1913|Rural|
+85516|Liandro Parra (Bloque 617)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2376|Rural|
+85516|San Jose El Tata|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2383|Rural|
+85516|Campo de Guadalupe Vega|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2391|Rural|
+85516|Campo Maria Luisa Ensinas|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2357|Rural|
+85516|Campo Maria de La Luz Robles|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2363|Rural|
+85516|Alefel|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2382|Rural|
+85516|Salamanca L�pez (La 21)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2390|Rural|
+85516|Los Payitos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2394|Rural|
+85516|Campo Flor del Valle|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2362|Rural|
+85516|Bloque 619 (Los Pinitos)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2373|Rural|
+85516|El Banco|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2389|Rural|
+85516|Demetrio Vallejo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|1312|Rural|
+85516|Campo los Dos Aguacates|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2360|Rural|
+85516|Los Flores|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2368|Rural|
+85516|Los Pinitos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2372|Rural|
+85516|Campo de Francisco Haro|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2385|Rural|
+85516|Campo de Heriberto Zamora|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2392|Rural|
+85516|Bloque 625 Entre 600 y 23|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2358|Rural|
+85516|Fernando Reinas Valenzuela|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2361|Rural|
+85516|Los Ponce|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2366|Rural|
+85516|El �lamo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2381|Rural|
+85516|El Alhuate|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2393|Rural|
+85516|Campo Robles|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2365|Rural|
+85516|Los Venaditos (Bloque 721)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2369|Rural|
+85516|Campo de Guadalupe Quintana|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2370|Rural|
+85516|Menual|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2371|Rural|
+85516|Felipe Robles|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2375|Rural|
+85516|Jorge Stewart|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2378|Rural|
+85516|El Ranchito|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|2380|Rural|
+85516|San Martin|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2387|Rural|
+85516|Campo Belisario Antill�n (Bloque 725)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2359|Rural|
+85516|Campo Mexia|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2367|Rural|
+85516|Jorge Hern�n Esti�var Garc�a|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2374|Rural|
+85516|Campo de Gilberto Castro|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2377|Rural|
+85516|Campo de Rodolfo Pablos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2395|Rural|
+85516|El Polvor�n|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|1311|Rural|
+85516|Campo Ignacio Ayala Mondaca|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2364|Rural|
+85516|El Novillo (Bloque 821)|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|2379|Rural|
+85516|La Nueve (Bloque 1025)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2384|Rural|
+85516|Campo de Augusto Escamilla (Bloque 1023)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2386|Rural|
+85516|Campo de los Ochoa|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2388|Rural|
+85518|Militar|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1308|Rural|
+85518|Doctor Aldama (Campo las Isabeles)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2408|Rural|
+85518|Ricardo Sagarena|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2403|Rural|
+85518|Vicente Guerrero|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|2414|Rural|
+85518|Campo de Rogelio Vel�zquez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2401|Rural|
+85518|La Doce|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2410|Rural|
+85518|Campo de Julio Castro|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2412|Rural|
+85518|Bachomobampo|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1314|Rural|
+85518|Vicente Guerrero|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|1317|Rural|
+85518|Campo de Sergio Tellechea|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2400|Rural|
+85518|Los Hernandez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2416|Rural|
+85518|Campo de Guzm�n Gallegos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2417|Rural|
+85518|La Democracia|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1307|Rural|
+85518|El Bateve|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|1315|Rural|
+85518|Campo de Hermelinda Flores (Bloque 1125)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2397|Rural|
+85518|Campo de Corrales|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2405|Rural|
+85518|Granja de Crianza y Desarrollo 3105|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2409|Rural|
+85518|Campo Z��iga|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2411|Rural|
+85518|Campo Gonzalez Folomir|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2419|Rural|
+85518|Samuel Valenzuela Mend�vil|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2423|Rural|
+85518|La Realidad|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2424|Rural|
+85518|Los Medanos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2425|Rural|
+85518|Campo La Soledad|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2404|Rural|
+85518|Campo 11 y 19|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2407|Rural|
+85518|Enrique Landa|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|1316|Rural|
+85518|Campo Pablo Cruz|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2398|Rural|
+85518|Campo de Benjamin Garcia|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2399|Rural|
+85518|Campo de Encinas Terrazas|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2402|Rural|
+85518|Bateve Segundo|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2413|Rural|
+85518|Campo de Leonardo P�rez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2415|Rural|
+85518|Campo de Rolando Navarro (Bloque 1319)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2418|Rural|
+85518|Campo de Lorenza Leogon Cu�n (Bloque 1317)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2421|Rural|
+85518|Campo de Alberto Cota|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2422|Rural|
+85518|Campo de Isabel Cuen|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2406|Rural|
+85518|Campo de Rodrigo Cota|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2420|Rural|
+85519|Campo de Santiago Cossio|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2432|Rural|
+85519|David Lamas Coronado|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2444|Rural|
+85519|Gerardo Badilla|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2453|Rural|
+85519|Tetabiate 1|Rancher�a|San Ignacio R�o Muerto|Sonora||85517|26|85517||29|072|1304|Rural|
+85519|6 y 33 Colonia Sonora|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2428|Rural|
+85519|Campo de los Esquer|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2440|Rural|
+85519|Los Venaditos|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2442|Rural|
+85519|Bloque 0037|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2447|Rural|
+85519|Campo de Hermenegildo Romero|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2449|Rural|
+85519|La Capilla|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2454|Rural|
+85519|Emiliano Zapata|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2429|Rural|
+85519|Sonora|Colonia|San Ignacio R�o Muerto|Sonora||85517|26|85517||09|072|2431|Rural|
+85519|Agraristas de Ciudad Obreg�n|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2434|Rural|
+85519|Bloque 837|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2436|Rural|
+85519|Felizardo Ochoa|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2430|Rural|
+85519|Ignacio Zaragoza|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2433|Rural|
+85519|El Tapiro|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2426|Rural|
+85519|7 de Noviembre|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2438|Rural|
+85519|El Porvenir|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2443|Rural|
+85519|Campo los Hernandez|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2448|Rural|
+85519|Campo de Lauterio Leon|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2450|Rural|
+85519|San Francisco O Narciso Beltr�n|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2439|Rural|
+85519|El Sauce y la Palma (Bloque 927)|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2452|Rural|
+85519|Bah�a de Lobos|Congregaci�n|San Ignacio R�o Muerto|Sonora||85517|26|85517||11|072|1306|Rural|
+85519|Campo Juan Garcia|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2427|Rural|
+85519|San Francisco|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2437|Rural|
+85519|Campo Hector Cervantes|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2445|Rural|
+85519|San Francisco Rio Muerto|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2446|Rural|
+85519|Campo de Luis Lizarraga|Ejido|San Ignacio R�o Muerto|Sonora||85517|26|85517||15|072|2451|Rural|
+85520|La Piedrera|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0024|Rural|
+85520|Abelardo Gal�z Preciado|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0006|Rural|
+85520|Ni�o San Humberto [Casa Hogar]|Ejido|Empalme|Sonora||85301|26|85301||15|025|0031|Rural|
+85520|Coch�rit|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0011|Rural|
+85520|La Candelaria|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0019|Rural|
+85523|El Bateve N�mero Uno|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0014|Rural|
+85523|Empalme el �guila|Ejido|Empalme|Sonora||85301|26|85301||15|025|0016|Rural|
+85523|San Isidro Barcenas|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0038|Rural|
+85523|La Aguilita|Ejido|Empalme|Sonora||85301|26|85301||15|025|0018|Rural|
+85523|La Escondida (Agua Caliente)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0022|Rural|
+85523|El Bateve|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0013|Rural|
+85523|Silvia Ordu�o|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0042|Rural|
+85524|San Pablo Dos|Ejido|Empalme|Sonora||85301|26|85301||15|025|0039|Rural|
+85524|Sociedad Rub�n Jaramillo (Campo Guaymas)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0044|Rural|
+85524|La Casita de Campo|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0020|Rural|
+85524|Santa Cruz|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0041|Rural|
+85524|Margarita (Agr�cola Omega)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0029|Rural|
+85524|Sociedad Igualitaria|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0043|Rural|
+85524|Cruz de Piedra|Congregaci�n|Empalme|Sonora||85301|26|85301||11|025|1318|Rural|
+85524|San Fernando de Guaymas|Ejido|Empalme|Sonora||85301|26|85301||15|025|1319|Rural|
+85525|Roncalli|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0035|Rural|
+85525|Los Chiltepines (San Juan)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0026|Rural|
+85525|Los Venados|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0028|Rural|
+85525|San Andr�s|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0037|Rural|
+85525|Los Hoyos [Centro de Transferencia de Embriones]|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0027|Rural|
+85525|Juan Rodr�guez|Ejido|Empalme|Sonora||85301|26|85301||15|025|2930|Rural|
+85525|San Enrique|Ejido|Empalme|Sonora||85301|26|85301||15|025|2929|Rural|
+85526|San Antonio|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|1332|Rural|
+85527|Playa del Sol|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0032|Rural|
+85530|Gaferza|Congregaci�n|Empalme|Sonora||85301|26|85301||11|025|1322|Rural|
+85530|Complementaci�n Ejido Baca Calder�n|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0012|Rural|
+85530|Buffalo Packing (Gringo Cebollero)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0009|Rural|
+85530|Zaragoza (Santa Amelia)|Congregaci�n|Empalme|Sonora||85301|26|85301||11|025|1324|Rural|
+85533|�rsulo Galv�n|Ejido|Empalme|Sonora||85301|26|85301||15|025|1328|Rural|
+85533|Mi Patria es Primero|Ejido|Empalme|Sonora||85301|26|85301||15|025|1323|Rural|
+85533|La Palma|Pueblo|Empalme|Sonora||85301|26|85301||28|025|1321|Rural|
+85533|El Porvenir|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|1320|Rural|
+85533|F�tima|Ejido|Empalme|Sonora||85301|26|85301||15|025|1327|Rural|
+85534|Establo F�tima (Agroindustrial Vilo)|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0017|Rural|
+85534|Ruiz|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0036|Rural|
+85534|Maytorena|Estaci�n|Empalme|Sonora||85301|26|85301||16|025|1331|Rural|
+85534|Pozo Nueve|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0033|Rural|
+85535|Pueblo Nuevo|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0034|Rural|
+85535|Cincuenta y Dos|Ejido|Empalme|Sonora||85301|26|85301||15|025|0010|Rural|
+85535|Santa Mar�a de Guaymas|Ejido|Empalme|Sonora||85301|26|85301||15|025|1333|Rural|
+85535|Las Tortolitas|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0025|Rural|
+85535|Aer�dromo San Mart�n|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0007|Rural|
+85535|Santa Anita|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0040|Rural|
+85535|Jos� Mar�a Morelos y Pav�n (La Atravezada)|Pueblo|Empalme|Sonora||85301|26|85301||28|025|1325|Rural|
+85536|Narciso Mendoza|Ejido|Empalme|Sonora||85301|26|85301||15|025|0030|Rural|
+85536|Antonio Rosales|Ejido|Empalme|Sonora||85301|26|85301||15|025|1329|Rural|
+85536|Avestruces del Noroeste|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0008|Rural|
+85536|La Choya Dos|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0021|Rural|
+85537|Vicente Guerrero|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0045|Rural|
+85537|Junelancahui (El Mezquite)|Ejido|Empalme|Sonora||85301|26|85301||15|025|1330|Rural|
+85537|La Florida|Rancher�a|Empalme|Sonora||85301|26|85301||29|025|0023|Rural|
+85537|El Mezquite (Terreno de Junelancahui)|Ejido|Empalme|Sonora||85301|26|85301||15|025|0015|Rural|
+85540|La Colorada|Pueblo|La Colorada|Sonora||83002|26|83002||28|021|1334|Rural|
+85549|San Jos� de Moradillas (El Cochi)|Rancher�a|La Colorada|Sonora||83002|26|83002||29|021|1336|Rural|
+85550|La Galera|Congregaci�n|La Colorada|Sonora||83002|26|83002||11|021|1339|Rural|
+85550|Cobachi|Congregaci�n|La Colorada|Sonora||83002|26|83002||11|021|1338|Rural|
+85550|San Jose de Pimas|Congregaci�n|La Colorada|Sonora||83002|26|83002||11|021|1337|Rural|
+85553|Tecoripa|Pueblo|La Colorada|Sonora||83002|26|83002||28|021|1340|Rural|
+85556|Torres|Estaci�n|La Colorada|Sonora||83002|26|83002||16|021|1335|Rural|
+85560|Mazatan|Pueblo|Mazat�n|Sonora||83002|26|83002||28|037|1341|Rural|
+85563|La Otra Banda|Colonia|Mazat�n|Sonora||83002|26|83002||09|037|0002|Urbano|
+85564|Loma LInda|Colonia|Mazat�n|Sonora||83002|26|83002||09|037|0001|Urbano|
+85565|Las Playitas|Colonia|Mazat�n|Sonora||83002|26|83002||09|037|0003|Urbano|
+85580|Suaqui Grande|Pueblo|Suaqui Grande|Sonora||83002|26|83002||28|062|1342|Rural|
+85600|Nuevo Sahuaripa|Colonia|Sahuaripa|Sonora||85601|26|85601||09|052|2310|Rural|
+85600|Talamantes|Colonia|Sahuaripa|Sonora||85601|26|85601||09|052|2311|Rural|
+85600|Sahuaripa Centro|Colonia|Sahuaripa|Sonora||85601|26|85601||09|052|1344|Rural|
+85600|Los Atardeceres|Colonia|Sahuaripa|Sonora||85601|26|85601||09|052|2309|Rural|
+85600|Mesita Del Guajari|Congregaci�n|Sahuaripa|Sonora||85601|26|85601||11|052|1343|Rural|
+85600|Trincheras|Colonia|Sahuaripa|Sonora||85601|26|85601||09|052|2312|Rural|

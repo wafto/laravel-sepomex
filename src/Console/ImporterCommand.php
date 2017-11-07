@@ -17,7 +17,7 @@ class ImporterCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'sepomex:import';
+    protected $signature = 'sepomex:import {--chunk=50}';
 
     /**
      * The console command description.
@@ -25,13 +25,6 @@ class ImporterCommand extends Command
      * @var string
      */
     protected $description = 'Imports sepomex data from the txt file provided by "Correos de México".';
-
-    /**
-     * Chunk size.
-     *
-     * @var int
-     */
-    protected $chunkSize = 500;
 
     /**
      * Execute the console command.
@@ -42,6 +35,8 @@ class ImporterCommand extends Command
     public function handle(SepomexRepository $repository)
     {
         try {
+            $chunkSize = intval($this->option('chunk'));
+
             // Source file.
             $source = $this->getSource();
 
@@ -78,7 +73,7 @@ class ImporterCommand extends Command
 
                 $accumulator[] = array_combine($keys, $data);
 
-                if (count($accumulator) >= $this->chunkSize) {
+                if (count($accumulator) >= $chunkSize) {
                     $repository->insertChunk($accumulator);
                     $accCount = count($accumulator);
                     $bar->advance($accCount);

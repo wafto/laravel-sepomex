@@ -24,6 +24,14 @@
             "Aftab\\Sepomex\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Aftab\\Sepomex\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "extra": {
         "laravel": {
             "providers": [
