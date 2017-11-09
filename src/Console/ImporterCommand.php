@@ -3,8 +3,8 @@
 namespace Aftab\Sepomex\Console;
 
 use SplFileObject;
+use Aftab\Sepomex\Sepomex;
 use Illuminate\Console\Command;
-use Aftab\Sepomex\SepomexRepository;
 
 /**
  * Class ImporterCommand
@@ -29,10 +29,10 @@ class ImporterCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param \Aftab\Sepomex\SepomexRepository $repository
+     * @param \Aftab\Sepomex\Sepomex $model
      * @return void
      */
-    public function handle(SepomexRepository $repository)
+    public function handle(Sepomex $model)
     {
         try {
             $chunkSize = intval($this->option('chunk'));
@@ -50,7 +50,7 @@ class ImporterCommand extends Command
 
             // Truncate database.
             $this->comment('Truncating table...');
-            $repository->truncate();
+            $model->truncate();
             $this->info('Table truncated.');
 
 
@@ -74,7 +74,7 @@ class ImporterCommand extends Command
                 $accumulator[] = array_combine($keys, $data);
 
                 if (count($accumulator) >= $chunkSize) {
-                    $repository->insertChunk($accumulator);
+                    $model->insert($accumulator);
                     $accCount = count($accumulator);
                     $bar->advance($accCount);
                     $inserted += $accCount;
@@ -83,7 +83,7 @@ class ImporterCommand extends Command
             }
 
             if (count($accumulator)) {
-                $repository->insertChunk($accumulator);
+                $model->insert($accumulator);
                 $accCount = count($accumulator);
                 $bar->advance($accCount);
                 $inserted += $accCount;
@@ -91,7 +91,11 @@ class ImporterCommand extends Command
 
             $bar->finish();
 
-            $this->info(sprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $inserted, $lines, $repository->table()));
+            $this->info(vsprintf("\nInserted [%s] rows from [%s] file lines in %s table.", [
+                $inserted,
+                $lines,
+                $model->getTable(),
+            ]));
 
         } catch (\Exception $e) {
             $this->error($e->getMessage());
