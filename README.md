@@ -6,8 +6,8 @@
 
 ## Introduction
 
-This package provides postal [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx)
-postal code information (unofficial) for Laravel.
+This package provides postal code [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx)
+information (unofficial) for Laravel.
 
 ## Installation
 
@@ -38,10 +38,12 @@ Publish the `sepomex.php` configuration file under `app/config` using the follow
 php artisan vendor:publish --provider="Aftab\Sepomex\SepomexServiceProvider"
 ```
 
+Here the configuration like `table_name` and `source_file` can be changed.
+
 ### 3) Source file
 
 Download and copy file [datos.gob.mx](https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales) in
-the `storage` directory as `cpdescarga.txt`.
+the `storage` directory as `cpdescarga.txt`, note that this path should match with the config file.
 
 ### 4) Migrate and Import
 
@@ -49,7 +51,7 @@ After configuring the file path and table name, run migrations and run the impor
 
 ```php
 php artisan migrate
-php artisan sepomex:import
+php artisan sepomex:import --chunk=50
 ```
 
 This step might took some time to finish.

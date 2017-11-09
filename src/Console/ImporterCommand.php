@@ -60,7 +60,7 @@ class ImporterCommand extends Command
             $lines -= 2;
 
             // Starting import.
-            $this->comment(sprintf('Importing [%s] rows from file...', $lines));
+            $this->comment(sprintf('Parsing [%s] rows from file...', $lines));
 
             $bar = $this->output->createProgressBar($lines);
 
@@ -91,7 +91,7 @@ class ImporterCommand extends Command
 
             $bar->finish();
 
-            $this->info(sprintf("\nInserted [%s] rows in %s table.", $inserted, $repository->table()));
+            $this->info(sprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $inserted, $lines, $repository->table()));
 
         } catch (\Exception $e) {
             $this->error($e->getMessage());
@@ -143,12 +143,9 @@ class ImporterCommand extends Command
      */
     protected function prepareRow($str)
     {
-        $data = array_map('trim', explode('|', iconv('iso-8859-1', 'utf-8', $str)));
-        foreach ($data as $key => $value) {
-            if (empty($value)) {
-                $data[$key] = null;
-            }
-        }
-        return $data;
+        return array_map(function ($value) {
+            $value = trim($value);
+            return empty($value) ? null : $value;
+        }, explode('|', iconv('iso-8859-1', 'utf-8', $str)));
     }
 }

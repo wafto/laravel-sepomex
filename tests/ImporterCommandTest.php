@@ -21,7 +21,7 @@ class ImporterCommandTest extends TestCase
 
         $this->assertContains('Truncating table...', $output);
         $this->assertContains('Table truncated.', $output);
-        $this->assertContains('Importing [403] rows from file...', $output);
-        $this->assertContains('Inserted [403] rows in sepomex table', $output);
+        $this->assertContains('Parsing [404] rows from file...', $output);
+        $this->assertContains('Inserted [403] rows from [404] file lines in sepomex table', $output);
     }
 }
