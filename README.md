@@ -1,11 +1,15 @@
 # Laravel Sepomex
+[![Travis](https://travis-ci.org/wafto/laravel-sepomex.svg)](https://travis-ci.org/wafto/laravel-sepomex)
+[![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
+[![Latest Stable Version](https://poser.pugx.org/wafto/laravel-sepomex/v/stable)](https://packagist.org/packages/wafto/laravel-sepomex)
+[![License](https://poser.pugx.org/wafto/laravel-sepomex/license)](https://packagist.org/packages/wafto/laravel-sepomex)
 
 ## Introduction
 
 This package provides postal [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx) 
 postal code information (unofficial) for Laravel.
 
-## Installation.
+## Installation
 
 You can install this package by running:
 
@@ -13,7 +17,7 @@ You can install this package by running:
 composer require wafto/laravel-sepomex
 ```
 
-## Setup.
+## Setup
 
 In order to setup this package, the next steps are needed.
 
