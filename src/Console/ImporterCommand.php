@@ -3,8 +3,8 @@
 namespace Aftab\Sepomex\Console;
 
 use SplFileObject;
-use Aftab\Sepomex\Sepomex;
 use Illuminate\Console\Command;
+use Aftab\Sepomex\Models\Sepomex;
 
 /**
  * Class ImporterCommand
@@ -29,7 +29,7 @@ class ImporterCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param \Aftab\Sepomex\Sepomex $model
+     * @param \Aftab\Sepomex\Models\Sepomex $model
      * @return void
      */
     public function handle(Sepomex $model)

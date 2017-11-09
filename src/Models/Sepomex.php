@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex;
+namespace Aftab\Sepomex\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

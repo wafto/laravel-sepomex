@@ -2,7 +2,7 @@
 
 namespace Aftab\Sepomex\Tests;
 
-use Aftab\Sepomex\Sepomex;
+use Aftab\Sepomex\Models\Sepomex;
 
 /**
  * Class SepomexPostalCodeTest
