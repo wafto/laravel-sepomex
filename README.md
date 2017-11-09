@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This package provides postal [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx) 
+This package provides postal [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx)
 postal code information (unofficial) for Laravel.
 
 ## Installation
@@ -23,7 +23,7 @@ In order to setup this package, the next steps are needed.
 
 ### 1) Service Provider
 
-If you don't use auto-discovery (Laravel 5.5+), add the SepomexServiceProvider to the 
+If you don't use auto-discovery (Laravel 5.5+), add the SepomexServiceProvider to the
 providers array in `config/app.php`.
 
 ```php
@@ -58,9 +58,9 @@ This step might took some time to finish.
 
 The database is distributed with a restrictive clause on the first line of the file.
 
->*El Catálogo Nacional de Códigos Postales, es elaborado por Correos de 
-México y se proporciona en forma gratuita para uso particular, no estando 
-permitida su comercialización, total o parcial, ni su distribución a 
+>*El Catálogo Nacional de Códigos Postales, es elaborado por Correos de
+México y se proporciona en forma gratuita para uso particular, no estando
+permitida su comercialización, total o parcial, ni su distribución a
 terceros bajo ningún concepto.*
 
 
@@ -69,9 +69,9 @@ so hopefully in the future the clause in the file change.
 
 ## Source (Fuente)
 
-***"Tabla de Códigos Postales y asentamientos humanos del país",*** *"Correos de México",* 
-*[https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales](https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales),*
-*2017-11-06*.
+>***"Catálogo Nacional de Códigos Postales"** publicado por Correos de México. Consultado en
+[https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales](https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales)
+el 2017-11-06.*
 
 ## License
 
