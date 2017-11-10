@@ -12,6 +12,18 @@ use Illuminate\Contracts\Support\Arrayable;
 class Location implements Arrayable
 {
     /**
+     * Location constructor.
+     *
+     * @param string $type
+     * @param string $name
+     */
+    public function __construct(string $type, string $name)
+    {
+        $this->setType($type);
+        $this->setName($name);
+    }
+
+    /**
      * @var string
      */
     protected $type;

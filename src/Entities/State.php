@@ -12,6 +12,18 @@ use Illuminate\Contracts\Support\Arrayable;
 class State implements Arrayable
 {
     /**
+     * State constructor.
+     *
+     * @param int $id
+     * @param string $name
+     */
+    public function __construct(int $id, string $name)
+    {
+        $this->setId($id);
+        $this->setName($name);
+    }
+
+    /**
      * @var int
      */
     protected $id;

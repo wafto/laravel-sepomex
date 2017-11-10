@@ -2,6 +2,11 @@
 
 namespace Aftab\Sepomex\Models;
 
+use Aftab\Sepomex\Entities\City;
+use Aftab\Sepomex\Entities\State;
+use Aftab\Sepomex\Entities\District;
+use Aftab\Sepomex\Entities\Location;
+use Aftab\Sepomex\Entities\Settlement;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -53,5 +58,20 @@ class Sepomex extends Model
     public function scopePostalCode($query, $code)
     {
         return $query->where('d_codigo', $code);
+    }
+
+    /**
+     * Gets a entity representation of the model.
+     *
+     * @return Settlement
+     */
+    public function toEntity()
+    {
+        $settlement = new Settlement();
+        $settlement->setState(new State($this->c_estado, $this->d_estado));
+        $settlement->setCity(new City($this->c_cve_ciudad, $this->d_ciudad));
+        $settlement->setDistrict(new District($this->c_mnpio, $this->D_mnpio));
+        $settlement->setLocation(new Location($this->d_tipo_asenta, $this->d_asenta));
+        return $settlement;
     }
 }
