@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class Location
+ *
  * @package Aftab\Sepomex\Entities
  */
 class Location implements Arrayable

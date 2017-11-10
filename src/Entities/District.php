@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class District
+ *
  * @package Aftab\Sepomex\Entities
  */
 class District implements Arrayable

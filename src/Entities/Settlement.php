@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class Settlement
+ *
  * @package Aftab\Sepomex\Entities
  */
 class Settlement implements Arrayable

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Sepomex
+ *
  * @package Aftab\Sepomex
  */
 class Sepomex extends Model
@@ -45,8 +46,8 @@ class Sepomex extends Model
     /**
      * Get the data from the specified postal code.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $code
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  string                                $code
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePostalCode($query, $code)

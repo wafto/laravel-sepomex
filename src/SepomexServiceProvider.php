@@ -7,6 +7,7 @@ use Aftab\Sepomex\Console\ImporterCommand;
 
 /**
  * Class SepomexServiceProvider
+ *
  * @package Aftab\Sepomex
  */
 class SepomexServiceProvider extends ServiceProvider
@@ -25,9 +26,11 @@ class SepomexServiceProvider extends ServiceProvider
 
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-            $this->commands([
+            $this->commands(
+                [
                 ImporterCommand::class,
-            ]);
+                ]
+            );
         }
     }
 

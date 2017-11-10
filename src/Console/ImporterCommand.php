@@ -8,6 +8,7 @@ use Aftab\Sepomex\Models\Sepomex;
 
 /**
  * Class ImporterCommand
+ *
  * @package Aftab\Sepomex\Console
  */
 class ImporterCommand extends Command
@@ -29,7 +30,7 @@ class ImporterCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param \Aftab\Sepomex\Models\Sepomex $model
+     * @param  \Aftab\Sepomex\Models\Sepomex $model
      * @return void
      */
     public function handle(Sepomex $model)
@@ -91,11 +92,15 @@ class ImporterCommand extends Command
 
             $bar->finish();
 
-            $this->info(vsprintf("\nInserted [%s] rows from [%s] file lines in %s table.", [
-                $inserted,
-                $lines,
-                $model->getTable(),
-            ]));
+            $this->info(
+                vsprintf(
+                    "\nInserted [%s] rows from [%s] file lines in %s table.", [
+                    $inserted,
+                    $lines,
+                    $model->getTable(),
+                    ]
+                )
+            );
 
         } catch (\Exception $e) {
             $this->error($e->getMessage());
@@ -142,14 +147,16 @@ class ImporterCommand extends Command
     /**
      * Parse a line from the source file.
      *
-     * @param string $str
+     * @param  string $str
      * @return array
      */
     protected function prepareRow($str)
     {
-        return array_map(function ($value) {
-            $value = trim($value);
-            return empty($value) ? null : $value;
-        }, explode('|', iconv('iso-8859-1', 'utf-8', $str)));
+        return array_map(
+            function ($value) {
+                $value = trim($value);
+                return empty($value) ? null : $value;
+            }, explode('|', iconv('iso-8859-1', 'utf-8', $str))
+        );
     }
 }

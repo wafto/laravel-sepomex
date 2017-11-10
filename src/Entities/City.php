@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * Class City
+ *
  * @package Aftab\Sepomex\Entities
  */
 class City implements Arrayable
