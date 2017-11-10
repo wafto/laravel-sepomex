@@ -38,7 +38,7 @@ class Location implements Arrayable
      */
     public function getType() : string
     {
-        return $this->id;
+        return $this->type;
     }
 
     /**

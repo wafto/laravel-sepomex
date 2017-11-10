@@ -68,6 +68,7 @@ class Sepomex extends Model
     public function toEntity()
     {
         $settlement = new Settlement();
+        $settlement->setPostal($this->d_codigo);
         $settlement->setState(new State($this->c_estado, $this->d_estado));
         $settlement->setCity(new City($this->c_cve_ciudad, $this->d_ciudad));
         $settlement->setDistrict(new District($this->c_mnpio, $this->D_mnpio));
