@@ -1,16 +1,16 @@
 <?php
 
-namespace Aftab\Sepomex;
+namespace Aftab\Sepomex\Repositories;
 
 use Aftab\Sepomex\Entities\State;
 use Aftab\Sepomex\Models\Sepomex;
 use Aftab\Sepomex\Contracts\SepomexContract;
 
 /**
- * Class SepomexRepository
+ * Class DatabaseRepository
  * @package Aftab\Sepomex
  */
-class SepomexRepository implements SepomexContract
+class DatabaseRepository implements SepomexContract
 {
     /**
      * @inheritdoc

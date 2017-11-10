@@ -4,6 +4,10 @@ namespace Aftab\Sepomex;
 
 use Illuminate\Support\ServiceProvider;
 use Aftab\Sepomex\Console\ImporterCommand;
+use Aftab\Sepomex\Contracts\SepomexContract;
+use Aftab\Sepomex\Repositories\CachedRepository;
+use Aftab\Sepomex\Repositories\DatabaseRepository;
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
 
 /**
  * Class SepomexServiceProvider
@@ -26,11 +30,9 @@ class SepomexServiceProvider extends ServiceProvider
 
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-            $this->commands(
-                [
+            $this->commands([
                 ImporterCommand::class,
-                ]
-            );
+            ]);
         }
     }
 
@@ -44,5 +46,9 @@ class SepomexServiceProvider extends ServiceProvider
         $configPath = __DIR__ . '/../config/sepomex.php';
 
         $this->mergeConfigFrom($configPath, 'sepomex');
+
+        $this->app->singleton(SepomexContract::class, function ($app) {
+            return new CachedRepository(new DatabaseRepository(), $app[CacheRepository::class]);
+        });
     }
 }
