@@ -6,6 +6,7 @@ use Aftab\Sepomex\SepomexServiceProvider;
 
 /**
  * Class TestCase
+ * @package Aftab\Sepomex\Tests
  */
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
