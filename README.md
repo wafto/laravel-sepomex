@@ -56,6 +56,29 @@ php artisan sepomex:import --chunk=50
 
 This step might took some time to finish.
 
+## Usage
+
+Only inject the contract `Aftab\Sepomex\Contracts\SepomexContract` or use 
+`app(Aftab\Sepomex\Contracts\SepomexContract::class)` to get the singleton instance.
+
+```php
+...
+use Aftab\Sepomex\Contracts\SepomexContract;
+    
+class SepomexController extends Controller
+{
+    public function postal(SepomexContract $sepomex, $postal)
+    {
+        return $sepomex->getByPostal($postal);
+    }
+    
+    public function states(SepomexContract $sepomex)
+    {
+        return $sepomex->getStates();
+    }
+}
+```
+
 ## Important Notes
 
 The database is distributed with a restrictive clause on the first line of the file.

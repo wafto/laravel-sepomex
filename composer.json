@@ -3,6 +3,10 @@
     "description": "Servicio Postal Mexicano (Sepomex) laravel library",
     "keywords": ["laravel", "sepomex", "mexico"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/wafto/laravel-sepomex/issues",
+        "source": "https://github.com/wafto/laravel-sepomex"
+    },
     "type": "library",
     "author": {
         "name": "Aftab Hussain Miranda",
