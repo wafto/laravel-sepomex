@@ -1,4 +1,5 @@
 # Laravel Sepomex
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/?branch=master)
 [![Travis](https://travis-ci.org/wafto/laravel-sepomex.svg)](https://travis-ci.org/wafto/laravel-sepomex)
 [![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![Latest Stable Version](https://poser.pugx.org/wafto/laravel-sepomex/v/stable)](https://packagist.org/packages/wafto/laravel-sepomex)
@@ -58,20 +59,20 @@ This step might took some time to finish.
 
 ## Usage
 
-Only inject the contract `Aftab\Sepomex\Contracts\SepomexContract` or use 
+Only inject the contract `Aftab\Sepomex\Contracts\SepomexContract` or use
 `app(Aftab\Sepomex\Contracts\SepomexContract::class)` to get the singleton instance.
 
 ```php
 ...
 use Aftab\Sepomex\Contracts\SepomexContract;
-    
+
 class SepomexController extends Controller
 {
     public function postal(SepomexContract $sepomex, $postal)
     {
         return $sepomex->getByPostal($postal);
     }
-    
+
     public function states(SepomexContract $sepomex)
     {
         return $sepomex->getStates();
