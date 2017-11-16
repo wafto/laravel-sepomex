@@ -1,5 +1,6 @@
 # Laravel Sepomex
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/wafto/laravel-sepomex/?branch=master)
 [![Travis](https://travis-ci.org/wafto/laravel-sepomex.svg)](https://travis-ci.org/wafto/laravel-sepomex)
 [![StyleCI](https://styleci.io/repos/110056515/shield?branch=master)](https://styleci.io/repos/110056515)
 [![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
