@@ -6,8 +6,7 @@ use Aftab\Sepomex\Models\Sepomex;
 use Aftab\Sepomex\Entities\Settlement;
 
 /**
- * Class SepomexModelTest
- * @package Aftab\Sepomex\Tests
+ * Class SepomexModelTest.
  */
 class SepomexModelTest extends TestCase
 {
@@ -23,7 +22,7 @@ class SepomexModelTest extends TestCase
     public function it_should_get_by_postal_code()
     {
         $this->artisan('sepomex:import', [
-            '--chunk' => '50'
+            '--chunk' => '50',
         ]);
 
         $model = Sepomex::postalCode('11590')->first();

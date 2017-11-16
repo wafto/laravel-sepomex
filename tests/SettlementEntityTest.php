@@ -9,8 +9,7 @@ use Aftab\Sepomex\Entities\Location;
 use Aftab\Sepomex\Entities\Settlement;
 
 /**
- * Class SettlementEntityTest
- * @package Aftab\Sepomex\Tests
+ * Class SettlementEntityTest.
  */
 class SettlementEntityTest extends TestCase
 {

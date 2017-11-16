@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\Entities\Location;
 
 /**
- * Class LocationEntityTest
- * @package Aftab\Sepomex\Tests
+ * Class LocationEntityTest.
  */
 class LocationEntityTest extends TestCase
 {

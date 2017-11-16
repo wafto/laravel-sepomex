@@ -10,9 +10,7 @@ use Aftab\Sepomex\Repositories\DatabaseRepository;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 
 /**
- * Class SepomexServiceProvider
- *
- * @package Aftab\Sepomex
+ * Class SepomexServiceProvider.
  */
 class SepomexServiceProvider extends ServiceProvider
 {
@@ -24,11 +22,11 @@ class SepomexServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $configPath = __DIR__ . '/../config/sepomex.php';
+            $configPath = __DIR__.'/../config/sepomex.php';
 
             $this->publishes([$configPath => config_path('sepomex.php')], 'sepomex');
 
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
             $this->commands([
                 ImporterCommand::class,
@@ -43,7 +41,7 @@ class SepomexServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/sepomex.php';
+        $configPath = __DIR__.'/../config/sepomex.php';
 
         $this->mergeConfigFrom($configPath, 'sepomex');
 

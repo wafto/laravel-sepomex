@@ -6,8 +6,7 @@ use Illuminate\Contracts\Cache\Repository;
 use Aftab\Sepomex\Contracts\SepomexContract;
 
 /**
- * Class CachedRepository
- * @package Aftab\Sepomex\Repositories
+ * Class CachedRepository.
  */
 class CachedRepository implements SepomexContract
 {
@@ -34,7 +33,7 @@ class CachedRepository implements SepomexContract
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @param string $postal
      * @return array
@@ -49,7 +48,7 @@ class CachedRepository implements SepomexContract
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @return array
      */

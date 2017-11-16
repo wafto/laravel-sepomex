@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * Class CreateSepomexTable
+ * Class CreateSepomexTable.
  */
 class CreateSepomexTable extends Migration
 {
