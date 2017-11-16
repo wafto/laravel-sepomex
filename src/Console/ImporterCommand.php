@@ -7,9 +7,7 @@ use Illuminate\Console\Command;
 use Aftab\Sepomex\Models\Sepomex;
 
 /**
- * Class ImporterCommand
- *
- * @package Aftab\Sepomex\Console
+ * Class ImporterCommand.
  */
 class ImporterCommand extends Command
 {
@@ -53,7 +51,6 @@ class ImporterCommand extends Command
             $this->comment('Truncating table...');
             $model->truncate();
             $this->info('Table truncated.');
-
 
             $keyCount = count($keys);
             $accumulator = [];
@@ -101,7 +98,6 @@ class ImporterCommand extends Command
                     ]
                 )
             );
-
         } catch (\Exception $e) {
             $this->error($e->getMessage());
         }
@@ -117,13 +113,14 @@ class ImporterCommand extends Command
         $count = 0;
         $path = config('sepomex.source_file');
 
-        $handle = fopen($path, "r");
-        while (!feof($handle)) {
+        $handle = fopen($path, 'r');
+        while (! feof($handle)) {
             fgets($handle);
             $count++;
         }
 
         fclose($handle);
+
         return $count;
     }
 
@@ -155,6 +152,7 @@ class ImporterCommand extends Command
         return array_map(
             function ($value) {
                 $value = trim($value);
+
                 return empty($value) ? null : $value;
             }, explode('|', iconv('iso-8859-1', 'utf-8', $str))
         );

@@ -10,9 +10,7 @@ use Aftab\Sepomex\Entities\Settlement;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Sepomex
- *
- * @package Aftab\Sepomex
+ * Class Sepomex.
  */
 class Sepomex extends Model
 {
@@ -39,7 +37,7 @@ class Sepomex extends Model
     ];
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @param array $attributes
      */
     public function __construct(array $attributes = [])
@@ -73,6 +71,7 @@ class Sepomex extends Model
         $settlement->setCity(new City($this->c_cve_ciudad, $this->d_ciudad));
         $settlement->setDistrict(new District($this->c_mnpio, $this->D_mnpio));
         $settlement->setLocation(new Location($this->d_tipo_asenta, $this->d_asenta));
+
         return $settlement;
     }
 }

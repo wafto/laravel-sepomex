@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Illuminate\Support\Facades\Artisan;
 
 /**
- * Class ImporterCommandTest
- * @package Aftab\Sepomex\Tests
+ * Class ImporterCommandTest.
  */
 class ImporterCommandTest extends TestCase
 {
@@ -14,7 +13,7 @@ class ImporterCommandTest extends TestCase
     public function it_should_run_the_command()
     {
         $this->artisan('sepomex:import', [
-            '--chunk' => '50'
+            '--chunk' => '50',
         ]);
 
         $output = Artisan::output();

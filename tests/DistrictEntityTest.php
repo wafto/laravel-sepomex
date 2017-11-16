@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\Entities\District;
 
 /**
- * Class DistrictEntityTest
- * @package Aftab\Sepomex\Tests
+ * Class DistrictEntityTest.
  */
 class DistrictEntityTest extends TestCase
 {

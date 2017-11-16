@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\Repositories\DatabaseRepository;
 
 /**
- * Class DatabaseRepositoryTest
- * @package Aftab\Sepomex\Tests
+ * Class DatabaseRepositoryTest.
  */
 class DatabaseRepositoryTest extends TestCase
 {
@@ -14,7 +13,7 @@ class DatabaseRepositoryTest extends TestCase
     public function get_by_postal_code_array()
     {
         $this->artisan('sepomex:import', [
-            '--chunk' => '50'
+            '--chunk' => '50',
         ]);
 
         $repo = new DatabaseRepository();
@@ -28,7 +27,7 @@ class DatabaseRepositoryTest extends TestCase
     public function get_states_array()
     {
         $this->artisan('sepomex:import', [
-            '--chunk' => '50'
+            '--chunk' => '50',
         ]);
 
         $repo = new DatabaseRepository();
