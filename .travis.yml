@@ -7,9 +7,24 @@ php:
 
 sudo: false
 
-before_install:
-  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+cache:
+  directories:
+    - $HOME/.composer/cache
 
-install: travis_retry composer install --no-interaction --prefer-dist --no-suggest
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
 
-script: vendor/bin/phpunit --verbose
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
+
+install:
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest
+
+script:
+  - phpunit --coverage-text --coverage-clover=coverage.clover
+
+after_script:
+  - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
