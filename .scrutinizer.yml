@@ -1,6 +1,15 @@
 filter:
   excluded_paths: [tests/*]
 
+build:
+  tests:
+    override:
+      -
+        command: 'vendor/bin/phpunit --coverage-clover=coverage'
+        coverage:
+          file: 'coverage'
+          format: 'clover'
+
 checks:
   php:
     remove_extra_empty_lines: true
