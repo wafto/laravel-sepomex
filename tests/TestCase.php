@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\SepomexServiceProvider;
 
 /**
- * Class TestCase
- * @package Aftab\Sepomex\Tests
+ * Class TestCase.
  */
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -46,6 +45,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             'prefix'   => '',
         ]);
 
-        $app['config']->set('sepomex.source_file', __DIR__ . '/files/test.txt');
+        $app['config']->set('sepomex.source_file', __DIR__.'/files/test.txt');
     }
 }

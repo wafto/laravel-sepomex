@@ -7,13 +7,12 @@ use Aftab\Sepomex\Models\Sepomex;
 use Aftab\Sepomex\Contracts\SepomexContract;
 
 /**
- * Class DatabaseRepository
- * @package Aftab\Sepomex
+ * Class DatabaseRepository.
  */
 class DatabaseRepository implements SepomexContract
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @param string $postal
      * @return array
@@ -29,7 +28,7 @@ class DatabaseRepository implements SepomexContract
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @return array
      */

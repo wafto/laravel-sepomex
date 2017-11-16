@@ -5,9 +5,7 @@ namespace Aftab\Sepomex\Entities;
 use Illuminate\Contracts\Support\Arrayable;
 
 /**
- * Class Settlement
- *
- * @package Aftab\Sepomex\Entities
+ * Class Settlement.
  */
 class Settlement implements Arrayable
 {
@@ -117,7 +115,7 @@ class Settlement implements Arrayable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return array
      */
     public function toArray() : array

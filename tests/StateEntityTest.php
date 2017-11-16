@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\Entities\State;
 
 /**
- * Class StateEntityTest
- * @package Aftab\Sepomex\Tests
+ * Class StateEntityTest.
  */
 class StateEntityTest extends TestCase
 {

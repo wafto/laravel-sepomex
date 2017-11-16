@@ -5,9 +5,7 @@ namespace Aftab\Sepomex\Entities;
 use Illuminate\Contracts\Support\Arrayable;
 
 /**
- * Class Location
- *
- * @package Aftab\Sepomex\Entities
+ * Class Location.
  */
 class Location implements Arrayable
 {
@@ -66,7 +64,7 @@ class Location implements Arrayable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return array
      */
     public function toArray() : array

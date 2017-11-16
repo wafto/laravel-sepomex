@@ -5,9 +5,7 @@ namespace Aftab\Sepomex\Entities;
 use Illuminate\Contracts\Support\Arrayable;
 
 /**
- * Class District
- *
- * @package Aftab\Sepomex\Entities
+ * Class District.
  */
 class District implements Arrayable
 {
@@ -66,7 +64,7 @@ class District implements Arrayable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return array
      */
     public function toArray() : array

@@ -5,8 +5,7 @@ namespace Aftab\Sepomex\Tests;
 use Aftab\Sepomex\Entities\City;
 
 /**
- * Class CityEntityTest
- * @package Aftab\Sepomex\Tests
+ * Class CityEntityTest.
  */
 class CityEntityTest extends TestCase
 {
