@@ -63,40 +63,30 @@ class ImporterCommand extends Command
             $bar = $this->output->createProgressBar($lines);
 
             while ($source->valid()) {
-                $data = $this->prepareRow($source->fgets());
-
-                if (count($data) != $keyCount) {
-                    continue;
+                for ($i = 0; $source->valid() && $i < $chunkSize; $i++) {
+                    $data = $this->prepareRow($source->fgets());
+                    if (count($data) === $keyCount) {
+                        $accumulator[] = array_combine($keys, $data);
+                    }
                 }
 
-                $accumulator[] = array_combine($keys, $data);
-
-                if (count($accumulator) >= $chunkSize) {
-                    $model->insert($accumulator);
-                    $accCount = count($accumulator);
-                    $bar->advance($accCount);
-                    $inserted += $accCount;
-                    $accumulator = [];
-                }
-            }
-
-            if (count($accumulator)) {
+                $count = count($accumulator);
                 $model->insert($accumulator);
-                $accCount = count($accumulator);
-                $bar->advance($accCount);
-                $inserted += $accCount;
+                $bar->advance($count);
+                $inserted += $count;
+                $accumulator = [];
             }
 
             $bar->finish();
 
+            $info = [
+                $inserted,
+                $lines,
+                $model->getTable(),
+            ];
+
             $this->info(
-                vsprintf(
-                    "\nInserted [%s] rows from [%s] file lines in %s table.", [
-                    $inserted,
-                    $lines,
-                    $model->getTable(),
-                    ]
-                )
+                vsprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $info)
             );
         } catch (\Exception $e) {
             $this->error($e->getMessage());
