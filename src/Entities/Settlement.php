@@ -118,14 +118,14 @@ class Settlement implements Arrayable
      * {@inheritdoc}
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         return [
             'postal' => $this->getPostal(),
-            'state' => $this->getState()->toArray(),
-            'city' => $this->getCity()->toArray(),
-            'district' => $this->getDistrict()->toArray(),
-            'location' => $this->getLocation()->toArray(),
+            'state' => $this->state ? $this->getState()->toArray() : null,
+            'city' => $this->city ? $this->getCity()->toArray() : null,
+            'district' => $this->district ? $this->getDistrict()->toArray() : null,
+            'location' => $this->location ? $this->getLocation()->toArray() : null,
         ];
     }
 }
