@@ -68,19 +68,19 @@ class Sepomex extends Model
         $settlement = new Settlement();
         $settlement->setPostal($this->d_codigo);
 
-        if (!empty($this->c_estado) && !empty($this->d_estado)) {
+        if (! empty($this->c_estado) && ! empty($this->d_estado)) {
             $settlement->setState(new State($this->c_estado, $this->d_estado));
         }
 
-        if (!empty($this->c_cve_ciudad) && !empty($this->d_ciudad)) {
+        if (! empty($this->c_cve_ciudad) && ! empty($this->d_ciudad)) {
             $settlement->setCity(new City($this->c_cve_ciudad, $this->d_ciudad));
         }
 
-        if (!empty($this->c_mnpio) && !empty($this->D_mnpio)) {
+        if (! empty($this->c_mnpio) && ! empty($this->D_mnpio)) {
             $settlement->setDistrict(new District($this->c_mnpio, $this->D_mnpio));
         }
 
-        if (!empty($this->d_tipo_asenta) && !empty($this->d_asenta)) {
+        if (! empty($this->d_tipo_asenta) && ! empty($this->d_asenta)) {
             $settlement->setLocation(new Location($this->d_tipo_asenta, $this->d_asenta));
         }
 
