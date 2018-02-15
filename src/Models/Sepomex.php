@@ -76,7 +76,7 @@ class Sepomex extends Model
             $settlement->setCity(new City($this->attributes['c_cve_ciudad'], $this->attributes['d_ciudad']));
         }
 
-        if (array_has($this->attributes, 'c_mnpio') && array_has($this->attributes, 'D_nmpio')) {
+        if (array_has($this->attributes, 'c_mnpio') && array_has($this->attributes, 'D_mnpio')) {
             $settlement->setDistrict(new District($this->attributes['c_mnpio'], $this->attributes['D_nmpio']));
         }
 
