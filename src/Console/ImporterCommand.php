@@ -43,9 +43,9 @@ class ImporterCommand extends Command
      *
      * @param \Aftab\Sepomex\Models\Sepomex $model
      * @param mixed $source
-     * @param integer $lines
+     * @param int $lines
      * @param array $keys
-     * @return integer
+     * @return int
      */
     protected function startImport($model, $source, $lines, $keys)
     {
