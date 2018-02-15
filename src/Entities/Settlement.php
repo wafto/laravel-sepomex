@@ -122,10 +122,10 @@ class Settlement implements Arrayable
     {
         return [
             'postal' => $this->getPostal(),
-            'state' => $this->state ? $this->getState()->toArray() : null,
-            'city' => $this->city ? $this->getCity()->toArray() : null,
-            'district' => $this->district ? $this->getDistrict()->toArray() : null,
-            'location' => $this->location ? $this->getLocation()->toArray() : null,
+            'state' => optional($this->state)->toArray(),
+            'city' => optional($this->city)->toArray(),
+            'district' => optional($this->district)->toArray(),
+            'location' => optional($this->location)->toArray(),
         ];
     }
 }

@@ -26,6 +26,58 @@ class ImporterCommand extends Command
     protected $description = 'Imports sepomex data from the txt file provided by "Correos de México".';
 
     /**
+     * Truncate database data.
+     *
+     * @param  \Aftab\Sepomex\Models\Sepomex $model
+     * @return void
+     */
+    protected function truncateTable(Sepomex $model)
+    {
+        $this->comment('Truncating table...');
+        $model->truncate();
+        $this->info('Table truncated.');
+    }
+
+    /**
+     * Start importing and return the inserted rows count.
+     *
+     * @param \Aftab\Sepomex\Models\Sepomex $model
+     * @param mixed $source
+     * @param integer $lines
+     * @param array $keys
+     * @return integer
+     */
+    protected function startImport($model, $source, $lines, $keys)
+    {
+        $this->comment(sprintf('Parsing [%s] rows from file...', $lines));
+
+        $chunk = intval($this->option('chunk'));
+        $bar = $this->output->createProgressBar($lines);
+        $accumulator = [];
+        $inserted = 0;
+        $keyCount = count($keys);
+
+        while ($source->valid()) {
+            for ($i = 0; $source->valid() && $i < $chunk; $i++) {
+                $data = $this->prepareRow($source->fgets());
+                if (count($data) === $keyCount) {
+                    $accumulator[] = array_combine($keys, $data);
+                }
+            }
+
+            $count = count($accumulator);
+            $model->insert($accumulator);
+            $bar->advance($count);
+            $inserted += $count;
+            $accumulator = [];
+        }
+
+        $bar->finish();
+
+        return $inserted;
+    }
+
+    /**
      * Execute the console command.
      *
      * @param  \Aftab\Sepomex\Models\Sepomex $model
@@ -47,47 +99,16 @@ class ImporterCommand extends Command
             // Get the columns fields names.
             $keys = $this->prepareRow($source->fgets());
 
-            // Truncate database.
-            $this->comment('Truncating table...');
-            $model->truncate();
-            $this->info('Table truncated.');
+            $this->truncateTable($model);
 
-            $keyCount = count($keys);
-            $accumulator = [];
-            $inserted = 0;
             $lines -= 2;
 
             // Starting import.
-            $this->comment(sprintf('Parsing [%s] rows from file...', $lines));
+            $inserted = $this->startImport($model, $source, $lines, $keys);
 
-            $bar = $this->output->createProgressBar($lines);
+            $info = sprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $inserted, $lines, $model->getTable());
 
-            while ($source->valid()) {
-                for ($i = 0; $source->valid() && $i < $chunkSize; $i++) {
-                    $data = $this->prepareRow($source->fgets());
-                    if (count($data) === $keyCount) {
-                        $accumulator[] = array_combine($keys, $data);
-                    }
-                }
-
-                $count = count($accumulator);
-                $model->insert($accumulator);
-                $bar->advance($count);
-                $inserted += $count;
-                $accumulator = [];
-            }
-
-            $bar->finish();
-
-            $info = [
-                $inserted,
-                $lines,
-                $model->getTable(),
-            ];
-
-            $this->info(
-                vsprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $info)
-            );
+            $this->info($info);
         } catch (\Exception $e) {
             $this->error($e->getMessage());
         }

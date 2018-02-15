@@ -66,22 +66,22 @@ class Sepomex extends Model
     public function toEntity()
     {
         $settlement = new Settlement();
-        $settlement->setPostal($this->d_codigo);
+        $settlement->setPostal(array_get($this->attributes, 'd_codigo'));
 
-        if (! empty($this->c_estado) && ! empty($this->d_estado)) {
-            $settlement->setState(new State($this->c_estado, $this->d_estado));
+        if (! empty(array_get($this->attributes, 'c_estado')) && ! empty(array_get($this->attributes, 'd_estado'))) {
+            $settlement->setState(new State(array_get($this->attributes, 'c_estado'), array_get($this->attributes, 'd_estado')));
         }
 
-        if (! empty($this->c_cve_ciudad) && ! empty($this->d_ciudad)) {
-            $settlement->setCity(new City($this->c_cve_ciudad, $this->d_ciudad));
+        if (! empty(array_get($this->attributes, 'c_cve_ciudad')) && ! empty(array_get($this->attributes, 'd_ciudad'))) {
+            $settlement->setCity(new City(array_get($this->attributes, 'c_cve_ciudad'), array_get($this->attributes, 'd_ciudad')));
         }
 
-        if (! empty($this->c_mnpio) && ! empty($this->D_mnpio)) {
-            $settlement->setDistrict(new District($this->c_mnpio, $this->D_mnpio));
+        if (! empty(array_get($this->attributes, 'c_mnpio')) && ! empty(array_get($this->attributes, 'D_nmpio'))) {
+            $settlement->setDistrict(new District(array_get($this->attributes, 'c_mnpio'), array_get($this->attributes, 'D_nmpio')));
         }
 
-        if (! empty($this->d_tipo_asenta) && ! empty($this->d_asenta)) {
-            $settlement->setLocation(new Location($this->d_tipo_asenta, $this->d_asenta));
+        if (! empty(array_get($this->attributes, 'd_tipo_asenta')) && ! empty(array_get($this->attributes, 'd_asenta'))) {
+            $settlement->setLocation(new Location(array_get($this->attributes, 'd_tipo_asenta'), array_get($this->attributes, 'd_asenta')));
         }
 
         return $settlement;
