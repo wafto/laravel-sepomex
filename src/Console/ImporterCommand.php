@@ -86,8 +86,6 @@ class ImporterCommand extends Command
     public function handle(Sepomex $model)
     {
         try {
-            $chunkSize = intval($this->option('chunk'));
-
             // Source file.
             $source = $this->getSource();
 
