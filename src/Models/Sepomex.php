@@ -77,7 +77,7 @@ class Sepomex extends Model
         }
 
         if (array_has($this->attributes, 'c_mnpio') && array_has($this->attributes, 'D_mnpio')) {
-            $settlement->setDistrict(new District($this->attributes['c_mnpio'], $this->attributes['D_nmpio']));
+            $settlement->setDistrict(new District($this->attributes['c_mnpio'], $this->attributes['D_mnpio']));
         }
 
         if (array_has($this->attributes, 'd_tipo_asenta') && array_has($this->attributes, 'd_asenta')) {
