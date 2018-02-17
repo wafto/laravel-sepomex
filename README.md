@@ -82,6 +82,34 @@ class SepomexController extends Controller
 }
 ```
 
+The second option is to use the Sepomex Facade by editing the `config/app.php` by adding the alias.
+
+```php
+'aliases' => [
+    ...
+    'Sepomex' => Aftab\Sepomex\Facades\Sepomex::class,
+]
+```
+
+And using anywhere in your application.
+
+```php
+...
+
+class SepomexController extends Controller
+{
+    public function postal($postal)
+    {
+        return Sepomex::getByPostal($postal);
+    }
+
+    public function states()
+    {
+        return Sepomex::getStates();
+    }
+}
+```
+
 ## Important Notes
 
 The database is distributed with a restrictive clause on the first line of the file.
