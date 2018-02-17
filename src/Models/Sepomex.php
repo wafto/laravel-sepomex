@@ -68,22 +68,38 @@ class Sepomex extends Model
         $settlement = new Settlement();
         $settlement->setPostal(array_get($this->attributes, 'd_codigo'));
 
-        if (array_has($this->attributes, 'c_estado') && array_has($this->attributes, 'd_estado')) {
+        if ($this->hasAttributes(['c_estado', 'd_estado'])) {
             $settlement->setState(new State($this->attributes['c_estado'], $this->attributes['d_estado']));
         }
 
-        if (array_has($this->attributes, 'c_cve_ciudad') && array_has($this->attributes, 'd_ciudad')) {
+        if ($this->hasAttributes(['c_cve_ciudad', 'd_ciudad'])) {
             $settlement->setCity(new City($this->attributes['c_cve_ciudad'], $this->attributes['d_ciudad']));
         }
 
-        if (array_has($this->attributes, 'c_mnpio') && array_has($this->attributes, 'D_mnpio')) {
+        if ($this->hasAttributes(['c_mnpio', 'D_mnpio'])) {
             $settlement->setDistrict(new District($this->attributes['c_mnpio'], $this->attributes['D_mnpio']));
         }
 
-        if (array_has($this->attributes, 'd_tipo_asenta') && array_has($this->attributes, 'd_asenta')) {
+        if ($this->hasAttributes(['d_tipo_asenta', 'd_asenta'])) {
             $settlement->setLocation(new Location($this->attributes['d_tipo_asenta'], $this->attributes['d_asenta']));
         }
 
         return $settlement;
+    }
+
+    /**
+     * Validates the existance of some model attributes.
+     *
+     * @param array $attributes
+     * @return bool
+     */
+    protected function hasAttributes(array $attributes)
+    {
+        foreach ($attributes as $attr) {
+            if (!array_has($this->attributes, $attr)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
