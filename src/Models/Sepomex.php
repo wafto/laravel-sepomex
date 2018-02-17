@@ -96,10 +96,11 @@ class Sepomex extends Model
     protected function hasAttributes(array $attributes)
     {
         foreach ($attributes as $attr) {
-            if (!array_has($this->attributes, $attr)) {
+            if (! array_has($this->attributes, $attr)) {
                 return false;
             }
         }
+
         return true;
     }
 }
