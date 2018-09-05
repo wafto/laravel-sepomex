@@ -16,10 +16,10 @@
     ],
     "require": {
         "php": ">=7.0",
-        "illuminate/console": "5.5.x|5.6.x",
-        "illuminate/contracts": "5.5.x|5.6.x",
-        "illuminate/database": "5.5.x|5.6.x",
-        "illuminate/support": "5.5.x|5.6.x"
+        "illuminate/console": "5.5.x|5.6.x|5.7.x",
+        "illuminate/contracts": "5.5.x|5.6.x|5.7.x",
+        "illuminate/database": "5.5.x|5.6.x|5.7.x",
+        "illuminate/support": "5.5.x|5.6.x|5.7.x"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
