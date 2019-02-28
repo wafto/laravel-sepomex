@@ -2,8 +2,6 @@
 
 namespace Aftab\Sepomex\Tests;
 
-use Illuminate\Support\Facades\Artisan;
-
 /**
  * Class ImporterCommandTest.
  */
