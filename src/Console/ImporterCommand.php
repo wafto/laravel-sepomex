@@ -104,7 +104,7 @@ class ImporterCommand extends Command
             // Starting import.
             $inserted = $this->startImport($model, $source, $lines, $keys);
 
-            $info = sprintf("\nInserted [%s] rows from [%s] file lines in %s table.", $inserted, $lines, $model->getTable());
+            $info = sprintf('Inserted [%s] rows from [%s] file lines in %s table.', $inserted, $lines, $model->getTable());
 
             $this->info($info);
         } catch (\Exception $e) {

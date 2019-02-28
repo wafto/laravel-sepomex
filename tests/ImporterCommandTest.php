@@ -12,16 +12,15 @@ class ImporterCommandTest extends TestCase
     /** @test */
     public function it_should_run_the_command()
     {
-        $this->artisan('sepomex:import', [
-            '--chunk' => '50',
-        ]);
-
-        $output = Artisan::output();
-
-        $this->assertContains('Truncating table...', $output);
-        $this->assertContains('Table truncated.', $output);
-        $this->assertContains('Parsing [404] rows from file...', $output);
-        $this->assertContains('Inserted [403] rows from [404] file lines in sepomex table', $output);
+        $this
+            ->artisan('sepomex:import', [
+                '--chunk' => '50',
+            ])
+            ->expectsOutput('Truncating table...')
+            ->expectsOutput('Table truncated.')
+            ->expectsOutput('Parsing [404] rows from file...')
+            ->expectsOutput('Inserted [403] rows from [404] file lines in sepomex table.')
+            ->assertExitCode(0);
     }
 
     /** @test */
@@ -29,12 +28,11 @@ class ImporterCommandTest extends TestCase
     {
         config(['sepomex.source_file' => 'foo.txt']);
 
-        $this->artisan('sepomex:import', [
-            '--chunk' => '50',
-        ]);
-
-        $output = Artisan::output();
-
-        $this->assertContains("No source file found on foo.txt, please make sure to download it.\n", $output);
+        $this
+            ->artisan('sepomex:import', [
+                '--chunk' => '50',
+            ])
+            ->expectsOutput('No source file found on foo.txt, please make sure to download it.')
+            ->assertExitCode(0);
     }
 }
