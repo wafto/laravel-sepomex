@@ -16,14 +16,14 @@
     ],
     "require": {
         "php": "^7.2",
-        "illuminate/console": "5.5.x|5.6.x|5.7.x|5.8.x",
-        "illuminate/contracts": "5.5.x|5.6.x|5.7.x|5.8.x",
-        "illuminate/database": "5.5.x|5.6.x|5.7.x|5.8.x",
-        "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x"
+        "illuminate/console": "5.5.x|5.6.x|5.7.x|5.8.x|^6.0",
+        "illuminate/contracts": "5.5.x|5.6.x|5.7.x|5.8.x|^6.0",
+        "illuminate/database": "5.5.x|5.6.x|5.7.x|5.8.x|^6.0",
+        "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x|^6.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
-        "orchestra/testbench": "3.5.*|3.6.*|3.7.*|3.8.*",
+        "orchestra/testbench": "3.5.*|3.6.*|3.7.*|3.8.*|^4.0",
         "phpunit/phpunit": "^8.0"
     },
     "autoload": {
