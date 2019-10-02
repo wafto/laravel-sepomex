@@ -2,6 +2,7 @@
 
 namespace Aftab\Sepomex\Models;
 
+use Illuminate\Support\Arr;
 use Aftab\Sepomex\Entities\City;
 use Aftab\Sepomex\Entities\State;
 use Aftab\Sepomex\Entities\District;
@@ -66,7 +67,7 @@ class Sepomex extends Model
     public function toEntity()
     {
         $settlement = new Settlement();
-        $settlement->setPostal(array_get($this->attributes, 'd_codigo'));
+        $settlement->setPostal(Arr::get($this->attributes, 'd_codigo'));
 
         if ($this->hasAttributes(['c_estado', 'd_estado'])) {
             $settlement->setState(new State($this->attributes['c_estado'], $this->attributes['d_estado']));
@@ -96,7 +97,7 @@ class Sepomex extends Model
     protected function hasAttributes(array $attributes)
     {
         foreach ($attributes as $attr) {
-            if (! array_has($this->attributes, $attr)) {
+            if (! Arr::has($this->attributes, $attr)) {
                 return false;
             }
         }
