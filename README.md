@@ -20,6 +20,8 @@ You can install this package by running:
 composer require wafto/laravel-sepomex
 ```
 
+For Laravel versions below ``6.0`` please use the version tagged with ``1.6.0``.
+
 ## Setup
 
 In order to setup this package, the next steps are needed.
