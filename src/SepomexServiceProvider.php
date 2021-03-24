@@ -2,12 +2,12 @@
 
 namespace Aftab\Sepomex;
 
-use Illuminate\Support\ServiceProvider;
 use Aftab\Sepomex\Console\ImporterCommand;
 use Aftab\Sepomex\Contracts\SepomexContract;
 use Aftab\Sepomex\Repositories\CachedRepository;
 use Aftab\Sepomex\Repositories\DatabaseRepository;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Class SepomexServiceProvider.

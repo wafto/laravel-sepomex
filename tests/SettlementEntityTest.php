@@ -3,10 +3,10 @@
 namespace Aftab\Sepomex\Tests;
 
 use Aftab\Sepomex\Entities\City;
-use Aftab\Sepomex\Entities\State;
 use Aftab\Sepomex\Entities\District;
 use Aftab\Sepomex\Entities\Location;
 use Aftab\Sepomex\Entities\Settlement;
+use Aftab\Sepomex\Entities\State;
 
 /**
  * Class SettlementEntityTest.

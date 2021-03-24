@@ -34,7 +34,7 @@ class Location implements Arrayable
     /**
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -50,7 +50,7 @@ class Location implements Arrayable
     /**
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -67,7 +67,7 @@ class Location implements Arrayable
      * {@inheritdoc}
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         return [
             'type' => $this->getType(),

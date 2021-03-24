@@ -2,8 +2,8 @@
 
 namespace Aftab\Sepomex\Tests;
 
-use Aftab\Sepomex\Models\Sepomex;
 use Aftab\Sepomex\Entities\Settlement;
+use Aftab\Sepomex\Models\Sepomex;
 
 /**
  * Class SepomexModelTest.

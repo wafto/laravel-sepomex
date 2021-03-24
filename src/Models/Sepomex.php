@@ -2,13 +2,13 @@
 
 namespace Aftab\Sepomex\Models;
 
-use Illuminate\Support\Arr;
 use Aftab\Sepomex\Entities\City;
-use Aftab\Sepomex\Entities\State;
 use Aftab\Sepomex\Entities\District;
 use Aftab\Sepomex\Entities\Location;
 use Aftab\Sepomex\Entities\Settlement;
+use Aftab\Sepomex\Entities\State;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 /**
  * Class Sepomex.

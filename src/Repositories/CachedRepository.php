@@ -2,8 +2,8 @@
 
 namespace Aftab\Sepomex\Repositories;
 
-use Illuminate\Contracts\Cache\Repository;
 use Aftab\Sepomex\Contracts\SepomexContract;
+use Illuminate\Contracts\Cache\Repository;
 
 /**
  * Class CachedRepository.

@@ -34,7 +34,7 @@ class State implements Arrayable
     /**
      * @return mixed
      */
-    public function getId() : int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -50,7 +50,7 @@ class State implements Arrayable
     /**
      * @return mixed
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -67,7 +67,7 @@ class State implements Arrayable
      * {@inheritdoc}
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         return [
             'id' => $this->getId(),

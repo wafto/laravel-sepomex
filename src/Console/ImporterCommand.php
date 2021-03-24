@@ -2,9 +2,9 @@
 
 namespace Aftab\Sepomex\Console;
 
-use SplFileObject;
-use Illuminate\Console\Command;
 use Aftab\Sepomex\Models\Sepomex;
+use Illuminate\Console\Command;
+use SplFileObject;
 
 /**
  * Class ImporterCommand.

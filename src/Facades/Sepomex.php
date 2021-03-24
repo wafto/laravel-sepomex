@@ -2,8 +2,8 @@
 
 namespace Aftab\Sepomex\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Aftab\Sepomex\Contracts\SepomexContract;
+use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Sepomex.

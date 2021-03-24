@@ -2,9 +2,9 @@
 
 namespace Aftab\Sepomex\Repositories;
 
+use Aftab\Sepomex\Contracts\SepomexContract;
 use Aftab\Sepomex\Entities\State;
 use Aftab\Sepomex\Models\Sepomex;
-use Aftab\Sepomex\Contracts\SepomexContract;
 
 /**
  * Class DatabaseRepository.

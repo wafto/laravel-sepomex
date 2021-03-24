@@ -2,9 +2,9 @@
 
 namespace Aftab\Sepomex\Tests;
 
-use Illuminate\Contracts\Cache\Repository;
 use Aftab\Sepomex\Repositories\CachedRepository;
 use Aftab\Sepomex\Repositories\DatabaseRepository;
+use Illuminate\Contracts\Cache\Repository;
 
 /**
  * Class CachedRepositoryTest.
