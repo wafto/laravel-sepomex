@@ -2,6 +2,7 @@ vendor
 composer.phar
 composer.lock
 coverage
+.php_cs.cache
 .DS_Store
 Thumbs.db
 .idea

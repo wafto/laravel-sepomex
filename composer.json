@@ -29,6 +29,7 @@
         "illuminate/support": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.8|^2.9",
         "doctrine/dbal": "^2.10|^3.0",
         "friendsofphp/php-cs-fixer": "^2.18",
         "mockery/mockery": "^1.4",
