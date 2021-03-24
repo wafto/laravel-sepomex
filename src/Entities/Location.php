@@ -41,8 +41,10 @@ class Location implements Arrayable
 
     /**
      * @param string $type
+     *
+     * @return void
      */
-    public function setType(string $type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
@@ -57,8 +59,10 @@ class Location implements Arrayable
 
     /**
      * @param string $name
+     *
+     * @return void
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }

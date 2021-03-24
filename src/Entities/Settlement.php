@@ -44,8 +44,10 @@ class Settlement implements Arrayable
 
     /**
      * @param string $postal
+     *
+     * @return void
      */
-    public function setPostal(string $postal)
+    public function setPostal(string $postal): void
     {
         $this->postal = $postal;
     }
@@ -60,8 +62,10 @@ class Settlement implements Arrayable
 
     /**
      * @param State $state
+     *
+     * @return void
      */
-    public function setState(State $state)
+    public function setState(State $state): void
     {
         $this->state = $state;
     }
@@ -76,8 +80,10 @@ class Settlement implements Arrayable
 
     /**
      * @param City $city
+     *
+     * @return void
      */
-    public function setCity(City $city)
+    public function setCity(City $city): void
     {
         $this->city = $city;
     }
@@ -92,8 +98,10 @@ class Settlement implements Arrayable
 
     /**
      * @param District $district
+     *
+     * @return void
      */
-    public function setDistrict(District $district)
+    public function setDistrict(District $district): void
     {
         $this->district = $district;
     }
@@ -108,8 +116,10 @@ class Settlement implements Arrayable
 
     /**
      * @param Location $location
+     *
+     * @return void
      */
-    public function setLocation(Location $location)
+    public function setLocation(Location $location): void
     {
         $this->location = $location;
     }

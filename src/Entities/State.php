@@ -41,8 +41,10 @@ class State implements Arrayable
 
     /**
      * @param mixed $id
+     *
+     * @return void
      */
-    public function setId(int $id)
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
@@ -57,8 +59,10 @@ class State implements Arrayable
 
     /**
      * @param mixed $name
+     *
+     * @return void
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }

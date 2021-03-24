@@ -17,7 +17,7 @@ class ImporterCommandTest extends TestCase
             ->expectsOutput('Truncating table...')
             ->expectsOutput('Table truncated.')
             ->expectsOutput('Parsing [404] rows from file...')
-            ->expectsOutput('Inserted [403] rows from [404] file lines in sepomex table.')
+            ->expectsOutput("Inserted [403] rows from [404] file lines in sepomex table.\n")
             ->assertExitCode(0);
     }
 
