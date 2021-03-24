@@ -29,6 +29,7 @@
         "illuminate/support": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
+        "doctrine/dbal": "^2.10|^3.0",
         "friendsofphp/php-cs-fixer": "^2.18",
         "mockery/mockery": "^1.4",
         "orchestra/testbench": "^4.0|^5.0|^6.0",

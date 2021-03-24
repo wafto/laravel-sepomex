@@ -1,5 +1,5 @@
 # Laravel Sepomex
-[![Tests]](https://github.com/wafto/laravel-sepomex/workflows/run-tests/badge.svg)
+![Tests](https://github.com/wafto/laravel-sepomex/workflows/run-tests/badge.svg)
 [![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![Latest Stable Version](https://poser.pugx.org/wafto/laravel-sepomex/v/stable)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![License](https://poser.pugx.org/wafto/laravel-sepomex/license)](https://packagist.org/packages/wafto/laravel-sepomex)
