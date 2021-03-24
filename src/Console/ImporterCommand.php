@@ -163,7 +163,8 @@ class ImporterCommand extends Command
                 $value = trim($value);
 
                 return empty($value) ? null : $value;
-            }, explode('|', iconv('iso-8859-1', 'utf-8', $str))
+            },
+            explode('|', iconv('iso-8859-1', 'utf-8', $str))
         );
     }
 }

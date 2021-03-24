@@ -40,9 +40,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $app['config']->set('database.default', 'testing');
 
         $app['config']->set('database.connections.testing', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
 
         $app['config']->set('sepomex.source_file', __DIR__.'/files/test.txt');
