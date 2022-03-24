@@ -19,4 +19,25 @@ return [
     |
     */
     'source_file' => storage_path('cpdescarga.txt'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Encoding input
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the encoding of the source.
+    | At the time (2022) sepomex uses "utf-8"
+    |
+    */
+    'encoding_input' => 'utf-8',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Encoding output
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the encoding ouput according to your database.
+    |
+    */
+    'encoding_output' => 'utf-8',
 ];

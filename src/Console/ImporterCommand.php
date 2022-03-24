@@ -164,7 +164,7 @@ class ImporterCommand extends Command
 
                 return empty($value) ? null : $value;
             },
-            explode('|', iconv('iso-8859-1', 'utf-8', $str))
+            explode('|', iconv(config('sepomex.encoding_input'), config('sepomex.encoding_output'), $str))
         );
     }
 }
