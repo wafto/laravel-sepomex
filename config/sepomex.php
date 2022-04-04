@@ -29,7 +29,7 @@ return [
     | At the time (2022) sepomex uses "utf-8"
     |
     */
-    'encoding_input' => 'utf-8',
+    'encoding_input' => 'iso-8859-1',
 
     /*
     |--------------------------------------------------------------------------
