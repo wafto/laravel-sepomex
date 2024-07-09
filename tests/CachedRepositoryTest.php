@@ -1,9 +1,9 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Repositories\CachedRepository;
-use Aftab\Sepomex\Repositories\DatabaseRepository;
+use Wafto\Sepomex\Repositories\CachedRepository;
+use Wafto\Sepomex\Repositories\DatabaseRepository;
 use Illuminate\Contracts\Cache\Repository;
 
 /**

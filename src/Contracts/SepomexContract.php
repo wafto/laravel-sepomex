@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex\Contracts;
+namespace Wafto\Sepomex\Contracts;
 
 /**
  * Interface SepomexContract.

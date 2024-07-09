@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Console;
+namespace Wafto\Sepomex\Console;
 
-use Aftab\Sepomex\Models\Sepomex;
+use Wafto\Sepomex\Models\Sepomex;
 use Illuminate\Console\Command;
 use SplFileObject;
 
@@ -28,7 +28,7 @@ class ImporterCommand extends Command
     /**
      * Truncate database data.
      *
-     * @param  \Aftab\Sepomex\Models\Sepomex $model
+     * @param  \Wafto\Sepomex\Models\Sepomex $model
      * @return void
      */
     protected function truncateTable(Sepomex $model)
@@ -41,7 +41,7 @@ class ImporterCommand extends Command
     /**
      * Start importing and return the inserted rows count.
      *
-     * @param \Aftab\Sepomex\Models\Sepomex $model
+     * @param \Wafto\Sepomex\Models\Sepomex $model
      * @param mixed $source
      * @param int $lines
      * @param array $keys
@@ -80,7 +80,7 @@ class ImporterCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Aftab\Sepomex\Models\Sepomex $model
+     * @param  \Wafto\Sepomex\Models\Sepomex $model
      * @return void
      */
     public function handle(Sepomex $model)

@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Facades;
+namespace Wafto\Sepomex\Facades;
 
-use Aftab\Sepomex\Contracts\SepomexContract;
+use Wafto\Sepomex\Contracts\SepomexContract;
 use Illuminate\Support\Facades\Facade;
 
 /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Aftab\Sepomex\Models;
+namespace Wafto\Sepomex\Models;
 
-use Aftab\Sepomex\Entities\City;
-use Aftab\Sepomex\Entities\District;
-use Aftab\Sepomex\Entities\Location;
-use Aftab\Sepomex\Entities\Settlement;
-use Aftab\Sepomex\Entities\State;
+use Wafto\Sepomex\Entities\City;
+use Wafto\Sepomex\Entities\District;
+use Wafto\Sepomex\Entities\Location;
+use Wafto\Sepomex\Entities\Settlement;
+use Wafto\Sepomex\Entities\State;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 

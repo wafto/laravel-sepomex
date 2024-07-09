@@ -29,7 +29,7 @@ If you don't use auto-discovery (Laravel 5.5+), add the SepomexServiceProvider t
 providers array in `config/app.php`.
 
 ```php
-Aftab\Sepomex\SepomexServiceProvider::class
+Wafto\Sepomex\SepomexServiceProvider::class
 ```
 
 ### 2) Configuration file
@@ -37,7 +37,7 @@ Aftab\Sepomex\SepomexServiceProvider::class
 Publish the `sepomex.php` configuration file under `app/config` using the following command:
 
 ```php
-php artisan vendor:publish --provider="Aftab\Sepomex\SepomexServiceProvider"
+php artisan vendor:publish --provider="Wafto\Sepomex\SepomexServiceProvider"
 ```
 
 Here the configuration like `table_name` and `source_file` can be changed.
@@ -60,12 +60,12 @@ This step might took some time to finish.
 
 ## Usage
 
-Only inject the contract `Aftab\Sepomex\Contracts\SepomexContract` or use
-`app(Aftab\Sepomex\Contracts\SepomexContract::class)` to get the singleton instance.
+Only inject the contract `Wafto\Sepomex\Contracts\SepomexContract` or use
+`app(Wafto\Sepomex\Contracts\SepomexContract::class)` to get the singleton instance.
 
 ```php
 ...
-use Aftab\Sepomex\Contracts\SepomexContract;
+use Wafto\Sepomex\Contracts\SepomexContract;
 
 class SepomexController extends Controller
 {
@@ -86,7 +86,7 @@ The second option is to use the Sepomex Facade by editing the `config/app.php` b
 ```php
 'aliases' => [
     ...
-    'Sepomex' => Aftab\Sepomex\Facades\Sepomex::class,
+    'Sepomex' => Wafto\Sepomex\Facades\Sepomex::class,
 ]
 ```
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex\Entities;
+namespace Wafto\Sepomex\Entities;
 
 use Illuminate\Contracts\Support\Arrayable;
 

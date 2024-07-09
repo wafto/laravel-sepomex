@@ -1,10 +1,10 @@
 <?php
 
-namespace Aftab\Sepomex\Repositories;
+namespace Wafto\Sepomex\Repositories;
 
-use Aftab\Sepomex\Contracts\SepomexContract;
-use Aftab\Sepomex\Entities\State;
-use Aftab\Sepomex\Models\Sepomex;
+use Wafto\Sepomex\Contracts\SepomexContract;
+use Wafto\Sepomex\Entities\State;
+use Wafto\Sepomex\Models\Sepomex;
 
 /**
  * Class DatabaseRepository.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Repositories;
+namespace Wafto\Sepomex\Repositories;
 
-use Aftab\Sepomex\Contracts\SepomexContract;
+use Wafto\Sepomex\Contracts\SepomexContract;
 use Illuminate\Contracts\Cache\Repository;
 
 /**

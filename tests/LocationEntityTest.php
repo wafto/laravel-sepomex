@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Entities\Location;
+use Wafto\Sepomex\Entities\Location;
 
 /**
  * Class LocationEntityTest.

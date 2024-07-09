@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\SepomexServiceProvider;
+use Wafto\Sepomex\SepomexServiceProvider;
 
 /**
  * Class TestCase.

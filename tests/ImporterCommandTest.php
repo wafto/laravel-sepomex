@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
 /**
  * Class ImporterCommandTest.
