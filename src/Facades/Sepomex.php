@@ -2,8 +2,8 @@
 
 namespace Wafto\Sepomex\Facades;
 
-use Wafto\Sepomex\Contracts\SepomexContract;
 use Illuminate\Support\Facades\Facade;
+use Wafto\Sepomex\Contracts\SepomexContract;
 
 /**
  * Class Sepomex.

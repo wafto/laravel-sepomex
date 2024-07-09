@@ -11,9 +11,6 @@ class Location implements Arrayable
 {
     /**
      * Location constructor.
-     *
-     * @param string $type
-     * @param string $name
      */
     public function __construct(string $type, string $name)
     {
@@ -31,37 +28,21 @@ class Location implements Arrayable
      */
     protected $name;
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return void
-     */
     public function setType(string $type): void
     {
         $this->type = $type;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return void
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
@@ -69,7 +50,6 @@ class Location implements Arrayable
 
     /**
      * {@inheritdoc}
-     * @return array
      */
     public function toArray(): array
     {

@@ -28,10 +28,9 @@
         "illuminate/support": "^10.0|^11.0"
     },
     "require-dev": {
-        "larastan/larastan": "^2.9",
         "laravel/pint": "^1.16",
         "mockery/mockery": "^1.4",
-        "orchestra/testbench": "^7.0|^8.0",
+        "orchestra/testbench": "^8.23",
         "phpunit/phpunit": "^10.0"
     },
     "autoload": {
@@ -45,7 +44,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "pint": "vendor/bin/pint"
     },
     "extra": {
         "laravel": {

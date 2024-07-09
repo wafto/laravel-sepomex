@@ -2,13 +2,13 @@
 
 namespace Wafto\Sepomex\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Wafto\Sepomex\Entities\City;
 use Wafto\Sepomex\Entities\District;
 use Wafto\Sepomex\Entities\Location;
 use Wafto\Sepomex\Entities\Settlement;
 use Wafto\Sepomex\Entities\State;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
 
 /**
  * Class Sepomex.
@@ -39,7 +39,6 @@ class Sepomex extends Model
 
     /**
      * {@inheritdoc}
-     * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -50,8 +49,8 @@ class Sepomex extends Model
     /**
      * Get the data from the specified postal code.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder $query
-     * @param  string                                $code
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $code
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePostalCode($query, $code)
@@ -91,7 +90,6 @@ class Sepomex extends Model
     /**
      * Validates the existance of some model attributes.
      *
-     * @param array $attributes
      * @return bool
      */
     protected function hasAttributes(array $attributes)

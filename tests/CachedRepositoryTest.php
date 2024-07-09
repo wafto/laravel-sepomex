@@ -2,9 +2,9 @@
 
 namespace Wafto\Sepomex\Tests;
 
+use Illuminate\Contracts\Cache\Repository;
 use Wafto\Sepomex\Repositories\CachedRepository;
 use Wafto\Sepomex\Repositories\DatabaseRepository;
-use Illuminate\Contracts\Cache\Repository;
 
 /**
  * Class CachedRepositoryTest.

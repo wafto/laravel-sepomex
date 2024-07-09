@@ -2,12 +2,12 @@
 
 namespace Wafto\Sepomex;
 
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Illuminate\Support\ServiceProvider;
 use Wafto\Sepomex\Console\ImporterCommand;
 use Wafto\Sepomex\Contracts\SepomexContract;
 use Wafto\Sepomex\Repositories\CachedRepository;
 use Wafto\Sepomex\Repositories\DatabaseRepository;
-use Illuminate\Contracts\Cache\Repository as CacheRepository;
-use Illuminate\Support\ServiceProvider;
 
 /**
  * Class SepomexServiceProvider.

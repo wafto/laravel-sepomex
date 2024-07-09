@@ -13,9 +13,6 @@ class DatabaseRepository implements SepomexContract
 {
     /**
      * {@inheritdoc}
-     *
-     * @param string $postal
-     * @return array
      */
     public function getByPostal(string $postal): array
     {
@@ -29,8 +26,6 @@ class DatabaseRepository implements SepomexContract
 
     /**
      * {@inheritdoc}
-     *
-     * @return array
      */
     public function getStates(): array
     {
