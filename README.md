@@ -1,5 +1,4 @@
 # Laravel Sepomex
-![Tests](https://github.com/wafto/laravel-sepomex/workflows/run-tests/badge.svg)
 [![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![Latest Stable Version](https://poser.pugx.org/wafto/laravel-sepomex/v/stable)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![License](https://poser.pugx.org/wafto/laravel-sepomex/license)](https://packagist.org/packages/wafto/laravel-sepomex)
@@ -17,22 +16,11 @@ You can install this package by running:
 composer require wafto/laravel-sepomex
 ```
 
-For Laravel versions below ``6.0`` please use the version tagged with ``1.6.0``.
-
 ## Setup
 
 In order to setup this package, the next steps are needed.
 
-### 1) Service Provider
-
-If you don't use auto-discovery (Laravel 5.5+), add the SepomexServiceProvider to the
-providers array in `config/app.php`.
-
-```php
-Wafto\Sepomex\SepomexServiceProvider::class
-```
-
-### 2) Configuration file
+### 1) Configuration file
 
 Publish the `sepomex.php` configuration file under `app/config` using the following command:
 
@@ -44,7 +32,7 @@ Here the configuration like `table_name` and `source_file` can be changed.
 
 ### 3) Source file
 
-Download and copy file [datos.gob.mx](https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales) in
+Download and copy file [datos.gob.mx](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx) in
 the `storage` directory as `cpdescarga.txt`, note that this path should match with the config file.
 
 ### 4) Migrate and Import
