@@ -1,10 +1,11 @@
 {
     "name": "wafto/laravel-sepomex",
-    "description": "Servicio Postal Mexicano (Sepomex) laravel library",
+    "description": "Servicio Postal Mexicano (Sepomex) not official laravel library",
     "keywords": [
         "laravel",
         "sepomex",
-        "mexico"
+        "mexico",
+        "wafto"
     ],
     "license": "MIT",
     "support": {
@@ -16,46 +17,40 @@
         {
             "name": "Aftab Hussain Miranda",
             "email": "wafto.mx@gmail.com",
-            "homepage": "https://wafto.dev",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0|^7.4",
+        "php": "^8.2",
         "ext-json": "*",
-        "illuminate/console": "^7.0|^8.0",
-        "illuminate/contracts": "^7.0|^8.0",
-        "illuminate/database": "^7.0|^8.0",
-        "illuminate/support": "^7.0|^8.0"
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.18",
+        "laravel/pint": "^1.16",
         "mockery/mockery": "^1.4",
-        "orchestra/testbench": "^5.0|^6.0",
-        "phpunit/phpunit": "^9.4",
-        "psalm/plugin-laravel": "^1.4",
-        "vimeo/psalm": "^4.6"
+        "orchestra/testbench": "^8.23",
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
-            "Aftab\\Sepomex\\": "src/"
+            "Wafto\\Sepomex\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Aftab\\Sepomex\\Tests\\": "tests/"
+            "Wafto\\Sepomex\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "psalm": "vendor/bin/psalm",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "pint": "vendor/bin/pint"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Aftab\\Sepomex\\SepomexServiceProvider"
+                "Wafto\\Sepomex\\SepomexServiceProvider"
             ]
         }
     },

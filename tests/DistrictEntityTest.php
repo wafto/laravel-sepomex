@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Entities\District;
+use Wafto\Sepomex\Entities\District;
 
 /**
  * Class DistrictEntityTest.

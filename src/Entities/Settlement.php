@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex\Entities;
+namespace Wafto\Sepomex\Entities;
 
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -34,91 +34,51 @@ class Settlement implements Arrayable
      */
     protected $location;
 
-    /**
-     * @return string
-     */
     public function getPostal(): string
     {
         return $this->postal;
     }
 
-    /**
-     * @param string $postal
-     *
-     * @return void
-     */
     public function setPostal(string $postal): void
     {
         $this->postal = $postal;
     }
 
-    /**
-     * @return State
-     */
     public function getState(): State
     {
         return $this->state;
     }
 
-    /**
-     * @param State $state
-     *
-     * @return void
-     */
     public function setState(State $state): void
     {
         $this->state = $state;
     }
 
-    /**
-     * @return City
-     */
     public function getCity(): City
     {
         return $this->city;
     }
 
-    /**
-     * @param City $city
-     *
-     * @return void
-     */
     public function setCity(City $city): void
     {
         $this->city = $city;
     }
 
-    /**
-     * @return District
-     */
     public function getDistrict(): District
     {
         return $this->district;
     }
 
-    /**
-     * @param District $district
-     *
-     * @return void
-     */
     public function setDistrict(District $district): void
     {
         $this->district = $district;
     }
 
-    /**
-     * @return Location
-     */
     public function getLocation(): Location
     {
         return $this->location;
     }
 
-    /**
-     * @param Location $location
-     *
-     * @return void
-     */
     public function setLocation(Location $location): void
     {
         $this->location = $location;
@@ -126,7 +86,6 @@ class Settlement implements Arrayable
 
     /**
      * {@inheritdoc}
-     * @return array
      */
     public function toArray(): array
     {

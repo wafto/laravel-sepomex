@@ -1,10 +1,10 @@
 <?php
 
-namespace Aftab\Sepomex\Console;
+namespace Wafto\Sepomex\Console;
 
-use Aftab\Sepomex\Models\Sepomex;
 use Illuminate\Console\Command;
 use SplFileObject;
+use Wafto\Sepomex\Models\Sepomex;
 
 /**
  * Class ImporterCommand.
@@ -28,7 +28,6 @@ class ImporterCommand extends Command
     /**
      * Truncate database data.
      *
-     * @param  \Aftab\Sepomex\Models\Sepomex $model
      * @return void
      */
     protected function truncateTable(Sepomex $model)
@@ -41,10 +40,10 @@ class ImporterCommand extends Command
     /**
      * Start importing and return the inserted rows count.
      *
-     * @param \Aftab\Sepomex\Models\Sepomex $model
-     * @param mixed $source
-     * @param int $lines
-     * @param array $keys
+     * @param  \Wafto\Sepomex\Models\Sepomex  $model
+     * @param  mixed  $source
+     * @param  int  $lines
+     * @param  array  $keys
      * @return int
      */
     protected function startImport($model, $source, $lines, $keys)
@@ -80,7 +79,6 @@ class ImporterCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Aftab\Sepomex\Models\Sepomex $model
      * @return void
      */
     public function handle(Sepomex $model)
@@ -136,8 +134,9 @@ class ImporterCommand extends Command
     /**
      * Get a File Object from the cpdescarga.txt file under package storage directory.
      *
-     * @throws \Exception
      * @return SplFileObject
+     *
+     * @throws \Exception
      */
     protected function getSource()
     {
@@ -153,7 +152,7 @@ class ImporterCommand extends Command
     /**
      * Parse a line from the source file.
      *
-     * @param  string $str
+     * @param  string  $str
      * @return array
      */
     protected function prepareRow($str)

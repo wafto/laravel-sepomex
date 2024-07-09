@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Facades\Sepomex;
+use Wafto\Sepomex\Facades\Sepomex;
 
 /**
  * Class SepomexFacadeTest.

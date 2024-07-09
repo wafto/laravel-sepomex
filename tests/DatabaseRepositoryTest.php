@@ -1,8 +1,8 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Repositories\DatabaseRepository;
+use Wafto\Sepomex\Repositories\DatabaseRepository;
 
 /**
  * Class DatabaseRepositoryTest.

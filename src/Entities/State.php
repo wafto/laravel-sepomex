@@ -1,6 +1,6 @@
 <?php
 
-namespace Aftab\Sepomex\Entities;
+namespace Wafto\Sepomex\Entities;
 
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -11,9 +11,6 @@ class State implements Arrayable
 {
     /**
      * State constructor.
-     *
-     * @param int $id
-     * @param string $name
      */
     public function __construct(int $id, string $name)
     {
@@ -40,9 +37,7 @@ class State implements Arrayable
     }
 
     /**
-     * @param mixed $id
-     *
-     * @return void
+     * @param  mixed  $id
      */
     public function setId(int $id): void
     {
@@ -58,9 +53,7 @@ class State implements Arrayable
     }
 
     /**
-     * @param mixed $name
-     *
-     * @return void
+     * @param  mixed  $name
      */
     public function setName(string $name): void
     {
@@ -69,7 +62,6 @@ class State implements Arrayable
 
     /**
      * {@inheritdoc}
-     * @return array
      */
     public function toArray(): array
     {

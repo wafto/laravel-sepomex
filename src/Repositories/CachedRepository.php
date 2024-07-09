@@ -1,9 +1,9 @@
 <?php
 
-namespace Aftab\Sepomex\Repositories;
+namespace Wafto\Sepomex\Repositories;
 
-use Aftab\Sepomex\Contracts\SepomexContract;
 use Illuminate\Contracts\Cache\Repository;
+use Wafto\Sepomex\Contracts\SepomexContract;
 
 /**
  * Class CachedRepository.
@@ -22,9 +22,6 @@ class CachedRepository implements SepomexContract
 
     /**
      * CachedRepository constructor.
-     *
-     * @param SepomexContract $next
-     * @param Repository $cache
      */
     public function __construct(SepomexContract $next, Repository $cache)
     {
@@ -34,9 +31,6 @@ class CachedRepository implements SepomexContract
 
     /**
      * {@inheritdoc}
-     *
-     * @param string $postal
-     * @return array
      */
     public function getByPostal(string $postal): array
     {
@@ -49,8 +43,6 @@ class CachedRepository implements SepomexContract
 
     /**
      * {@inheritdoc}
-     *
-     * @return array
      */
     public function getStates(): array
     {

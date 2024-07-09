@@ -1,9 +1,9 @@
 <?php
 
-namespace Aftab\Sepomex\Tests;
+namespace Wafto\Sepomex\Tests;
 
-use Aftab\Sepomex\Entities\Settlement;
-use Aftab\Sepomex\Models\Sepomex;
+use Wafto\Sepomex\Entities\Settlement;
+use Wafto\Sepomex\Models\Sepomex;
 
 /**
  * Class SepomexModelTest.
