@@ -8,3 +8,4 @@ Thumbs.db
 .idea
 phpunit.xml
 .phpunit.result.cache
+.phpunit.cache
