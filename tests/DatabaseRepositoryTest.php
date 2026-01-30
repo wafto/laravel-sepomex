@@ -1,38 +1,22 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
-
 use Wafto\Sepomex\Repositories\DatabaseRepository;
 
-/**
- * Class DatabaseRepositoryTest.
- */
-class DatabaseRepositoryTest extends TestCase
-{
-    /** @test */
-    public function get_by_postal_code_array()
-    {
-        $this->artisan('sepomex:import', [
-            '--chunk' => '50',
-        ]);
+it('returns settlements array by postal code', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50']);
 
-        $repo = new DatabaseRepository();
-        $arr = $repo->getByPostal('11590');
+    $repo = new DatabaseRepository;
+    $arr = $repo->getByPostal('11590');
 
-        $this->assertArrayHasKey('postal', $arr[0]);
-        $this->assertEquals('11590', $arr[0]['postal']);
-    }
+    expect($arr[0])->toHaveKey('postal')
+        ->and($arr[0]['postal'])->toBe('11590');
+});
 
-    /** @test */
-    public function get_states_array()
-    {
-        $this->artisan('sepomex:import', [
-            '--chunk' => '50',
-        ]);
+it('returns states array', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50']);
 
-        $repo = new DatabaseRepository();
-        $states = $repo->getStates();
+    $repo = new DatabaseRepository;
+    $states = $repo->getStates();
 
-        $this->assertCount(3, $states);
-    }
-}
+    expect($states)->toHaveCount(3);
+});

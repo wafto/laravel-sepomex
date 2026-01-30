@@ -65,7 +65,7 @@ class Sepomex extends Model
      */
     public function toEntity()
     {
-        $settlement = new Settlement();
+        $settlement = new Settlement;
         $settlement->setPostal(Arr::get($this->attributes, 'd_codigo'));
 
         if ($this->hasAttributes(['c_estado', 'd_estado'])) {

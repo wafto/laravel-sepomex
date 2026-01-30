@@ -1,29 +1,16 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
-
 use Wafto\Sepomex\Entities\District;
 
-/**
- * Class DistrictEntityTest.
- */
-class DistrictEntityTest extends TestCase
-{
-    /** @test */
-    public function entity_district_setters_and_getters()
-    {
-        $district = new District(16, 'Miguel Hidalgo');
+it('has working getters', function () {
+    $district = new District(16, 'Miguel Hidalgo');
 
-        $this->assertEquals(16, $district->getId());
-        $this->assertEquals('Miguel Hidalgo', $district->getName());
-    }
+    expect($district->getId())->toBe(16)
+        ->and($district->getName())->toBe('Miguel Hidalgo');
+});
 
-    /** @test */
-    public function entity_district_to_array()
-    {
-        $district = new District(16, 'Miguel Hidalgo');
+it('converts to array', function () {
+    $district = new District(16, 'Miguel Hidalgo');
 
-        $this->assertArrayHasKey('id', $district->toArray());
-        $this->assertArrayHasKey('name', $district->toArray());
-    }
-}
+    expect($district->toArray())->toHaveKeys(['id', 'name']);
+});

@@ -1,38 +1,23 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
-
 use Wafto\Sepomex\Entities\Settlement;
 use Wafto\Sepomex\Models\Sepomex;
 
-/**
- * Class SepomexModelTest.
- */
-class SepomexModelTest extends TestCase
-{
-    /** @test */
-    public function it_should_connect_to_proper_table()
-    {
-        $model = new Sepomex();
+it('connects to the configured table', function () {
+    $model = new Sepomex;
 
-        $this->assertEquals(config('sepomex.table_name'), $model->getTable());
-    }
+    expect($model->getTable())->toBe(config('sepomex.table_name'));
+});
 
-    /** @test */
-    public function it_should_get_by_postal_code()
-    {
-        $this->artisan('sepomex:import', [
-            '--chunk' => '50',
-        ]);
+it('queries by postal code', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50']);
 
-        $model = Sepomex::postalCode('11590')->first();
+    $model = Sepomex::postalCode('11590')->first();
 
-        $this->assertNotNull($model);
+    expect($model)->not->toBeNull();
 
-        $collection = Sepomex::postalCode('67200')->get();
+    $collection = Sepomex::postalCode('67200')->get();
 
-        $this->assertEquals(6, $collection->count());
-
-        $this->assertInstanceOf(Settlement::class, $model->toEntity());
-    }
-}
+    expect($collection)->toHaveCount(6)
+        ->and($model->toEntity())->toBeInstanceOf(Settlement::class);
+});

@@ -46,7 +46,7 @@ class SepomexServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($configPath, 'sepomex');
 
         $this->app->singleton(SepomexContract::class, function ($app) {
-            return new CachedRepository(new DatabaseRepository(), $app[CacheRepository::class]);
+            return new CachedRepository(new DatabaseRepository, $app[CacheRepository::class]);
         });
     }
 }

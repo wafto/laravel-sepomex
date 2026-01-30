@@ -1,29 +1,16 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
-
 use Wafto\Sepomex\Entities\State;
 
-/**
- * Class StateEntityTest.
- */
-class StateEntityTest extends TestCase
-{
-    /** @test */
-    public function entity_state_setters_and_getters()
-    {
-        $state = new State(9, 'Ciudad de México');
+it('has working getters', function () {
+    $state = new State(9, 'Ciudad de México');
 
-        $this->assertEquals(9, $state->getId());
-        $this->assertEquals('Ciudad de México', $state->getName());
-    }
+    expect($state->getId())->toBe(9)
+        ->and($state->getName())->toBe('Ciudad de México');
+});
 
-    /** @test */
-    public function entity_state_to_array()
-    {
-        $state = new State(9, 'Ciudad de México');
+it('converts to array', function () {
+    $state = new State(9, 'Ciudad de México');
 
-        $this->assertArrayHasKey('id', $state->toArray());
-        $this->assertArrayHasKey('name', $state->toArray());
-    }
-}
+    expect($state->toArray())->toHaveKeys(['id', 'name']);
+});

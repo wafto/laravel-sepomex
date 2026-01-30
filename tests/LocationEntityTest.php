@@ -1,29 +1,16 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
-
 use Wafto\Sepomex\Entities\Location;
 
-/**
- * Class LocationEntityTest.
- */
-class LocationEntityTest extends TestCase
-{
-    /** @test */
-    public function entity_location_setters_and_getters()
-    {
-        $location = new Location('Colonia', 'Miguel Hidalgo');
+it('has working getters', function () {
+    $location = new Location('Colonia', 'Miguel Hidalgo');
 
-        $this->assertEquals('Colonia', $location->getType());
-        $this->assertEquals('Miguel Hidalgo', $location->getName());
-    }
+    expect($location->getType())->toBe('Colonia')
+        ->and($location->getName())->toBe('Miguel Hidalgo');
+});
 
-    /** @test */
-    public function entity_location_to_array()
-    {
-        $location = new Location('Colonia', 'Miguel Hidalgo');
+it('converts to array', function () {
+    $location = new Location('Colonia', 'Miguel Hidalgo');
 
-        $this->assertArrayHasKey('type', $location->toArray());
-        $this->assertArrayHasKey('name', $location->toArray());
-    }
-}
+    expect($location->toArray())->toHaveKeys(['type', 'name']);
+});

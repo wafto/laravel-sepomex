@@ -1,36 +1,18 @@
 <?php
 
-namespace Wafto\Sepomex\Tests;
+it('runs the import command successfully', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50'])
+        ->expectsOutput('Truncating table...')
+        ->expectsOutput('Table truncated.')
+        ->expectsOutput('Parsing [404] rows from file...')
+        ->expectsOutput("Inserted [403] rows from [404] file lines in sepomex table.\n")
+        ->assertExitCode(0);
+});
 
-/**
- * Class ImporterCommandTest.
- */
-class ImporterCommandTest extends TestCase
-{
-    /** @test */
-    public function it_should_run_the_command()
-    {
-        $this
-            ->artisan('sepomex:import', [
-                '--chunk' => '50',
-            ])
-            ->expectsOutput('Truncating table...')
-            ->expectsOutput('Table truncated.')
-            ->expectsOutput('Parsing [404] rows from file...')
-            ->expectsOutput("Inserted [403] rows from [404] file lines in sepomex table.\n")
-            ->assertExitCode(0);
-    }
+it('shows error when source file is missing', function () {
+    config(['sepomex.source_file' => 'foo.txt']);
 
-    /** @test */
-    public function it_should_run_throw_exception_with_no_source_file()
-    {
-        config(['sepomex.source_file' => 'foo.txt']);
-
-        $this
-            ->artisan('sepomex:import', [
-                '--chunk' => '50',
-            ])
-            ->expectsOutput('No source file found on foo.txt, please make sure to download it.')
-            ->assertExitCode(0);
-    }
-}
+    $this->artisan('sepomex:import', ['--chunk' => '50'])
+        ->expectsOutput('No source file found on foo.txt, please make sure to download it.')
+        ->assertExitCode(0);
+});
