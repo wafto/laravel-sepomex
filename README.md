@@ -1,16 +1,21 @@
 # Laravel Sepomex
+
 [![Total Downloads](https://poser.pugx.org/wafto/laravel-sepomex/downloads)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![Latest Stable Version](https://poser.pugx.org/wafto/laravel-sepomex/v/stable)](https://packagist.org/packages/wafto/laravel-sepomex)
 [![License](https://poser.pugx.org/wafto/laravel-sepomex/license)](https://packagist.org/packages/wafto/laravel-sepomex)
 
 ## Introduction
 
-This package provides postal code [SEPOMEX](http://www.correosdemexico.com.mx/Paginas/Inicio.aspx)
-information (unofficial) for Laravel.
+Laravel Sepomex is a package that provides Mexican postal code ([SEPOMEX](https://www.correosdemexico.gob.mx)) lookup functionality for Laravel applications. It imports postal code data from the official "Correos de México" catalog and provides an API to query settlements by postal code or list all states.
+
+## Requirements
+
+- PHP 8.2+
+- Laravel 10, 11, or 12
 
 ## Installation
 
-You can install this package by running:
+Install the package via Composer:
 
 ```bash
 composer require wafto/laravel-sepomex
@@ -18,46 +23,52 @@ composer require wafto/laravel-sepomex
 
 ## Setup
 
-In order to setup this package, the next steps are needed.
+### 1. Publish Configuration
 
-### 1) Configuration file
+Publish the `sepomex.php` configuration file:
 
-Publish the `sepomex.php` configuration file under `app/config` using the following command:
-
-```php
+```bash
 php artisan vendor:publish --provider="Wafto\Sepomex\SepomexServiceProvider"
 ```
 
-Here the configuration like `table_name` and `source_file` can be changed.
+This will create a configuration file at `config/sepomex.php` where you can customize the `table_name` and `source_file` options.
 
-### 3) Source file
+### 2. Download Source File
 
-Download and copy file [datos.gob.mx](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx) in
-the `storage` directory as `cpdescarga.txt`, note that this path should match with the config file.
+Download the official SEPOMEX catalog from [Correos de México](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx) and save it to your `storage` directory as `cpdescarga.txt`.
 
-### 4) Migrate and Import
+The file path should match the `source_file` setting in your configuration.
 
-After configuring the file path and table name, run migrations and run the importer command.
+### 3. Run Migrations
 
-```php
+Run the database migrations to create the required table:
+
+```bash
 php artisan migrate
+```
+
+### 4. Import Data
+
+Import the postal code data using the artisan command:
+
+```bash
 php artisan sepomex:import --chunk=50
 ```
 
-This step might took some time to finish.
+The `--chunk` option controls the batch size for database inserts. This process may take several minutes depending on your system.
 
 ## Usage
 
-Only inject the contract `Wafto\Sepomex\Contracts\SepomexContract` or use
-`app(Wafto\Sepomex\Contracts\SepomexContract::class)` to get the singleton instance.
+### Using Dependency Injection (Recommended)
+
+Inject the `SepomexContract` interface into your controllers or services:
 
 ```php
-...
 use Wafto\Sepomex\Contracts\SepomexContract;
 
 class SepomexController extends Controller
 {
-    public function postal(SepomexContract $sepomex, $postal)
+    public function postal(SepomexContract $sepomex, string $postal)
     {
         return $sepomex->getByPostal($postal);
     }
@@ -69,23 +80,25 @@ class SepomexController extends Controller
 }
 ```
 
-The second option is to use the Sepomex Facade by editing the `config/app.php` by adding the alias.
+### Using the Facade
+
+Alternatively, register the Sepomex facade in `config/app.php`:
 
 ```php
 'aliases' => [
-    ...
+    // ...
     'Sepomex' => Wafto\Sepomex\Facades\Sepomex::class,
 ]
 ```
 
-And using anywhere in your application.
+Then use it anywhere in your application:
 
 ```php
-...
+use Sepomex;
 
 class SepomexController extends Controller
 {
-    public function postal($postal)
+    public function postal(string $postal)
     {
         return Sepomex::getByPostal($postal);
     }
@@ -97,24 +110,34 @@ class SepomexController extends Controller
 }
 ```
 
+### Using the Container
+
+You can also resolve the contract from the container:
+
+```php
+$sepomex = app(\Wafto\Sepomex\Contracts\SepomexContract::class);
+$settlements = $sepomex->getByPostal('06600');
+```
+
+## API Methods
+
+| Method | Description |
+|--------|-------------|
+| `getByPostal(string $postal)` | Returns all settlements matching the given postal code |
+| `getStates()` | Returns a list of all Mexican states |
+
 ## Important Notes
 
-The database is distributed with a restrictive clause on the first line of the file.
+The database is distributed by Correos de México with the following clause:
 
->*El Catálogo Nacional de Códigos Postales, es elaborado por Correos de
-México y se proporciona en forma gratuita para uso particular, no estando
-permitida su comercialización, total o parcial, ni su distribución a
-terceros bajo ningún concepto.*
+> *El Catálogo Nacional de Códigos Postales, es elaborado por Correos de México y se proporciona en forma gratuita para uso particular, no estando permitida su comercialización, total o parcial, ni su distribución a terceros bajo ningún concepto.*
 
+The database has also been released under the [LIBRE USO MX](https://datos.gob.mx/libreusomx) license.
 
-**But** the database has been released under the license [LIBRE USO MX](https://datos.gob.mx/libreusomx)
-so hopefully in the future the clause in the file change.
+## Source
 
-## Source (Fuente)
-
->***"Catálogo Nacional de Códigos Postales"** publicado por Correos de México. Consultado en
-[https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales](https://datos.gob.mx/busca/dataset/catalogo-nacional-de-codigos-postales)
-el 2017-11-06.*
+> **"Catálogo Nacional de Códigos Postales"** publicado por Correos de México.
+> Disponible en [https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx)
 
 ## License
 
