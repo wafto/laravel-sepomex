@@ -3,8 +3,8 @@
 namespace Wafto\Sepomex\Console;
 
 use Illuminate\Console\Command;
-use SplFileObject;
 use Wafto\Sepomex\Models\Sepomex;
+use Wafto\Sepomex\Support\DelimitedFileIterator;
 
 /**
  * Class ImporterCommand.
@@ -41,12 +41,11 @@ class ImporterCommand extends Command
      * Start importing and return the inserted rows count.
      *
      * @param  \Wafto\Sepomex\Models\Sepomex  $model
-     * @param  mixed  $source
+     * @param  \Wafto\Sepomex\Support\DelimitedFileIterator  $iterator
      * @param  int  $lines
-     * @param  array  $keys
      * @return int
      */
-    protected function startImport($model, $source, $lines, $keys)
+    protected function startImport($model, $iterator, $lines)
     {
         $this->comment(sprintf('Parsing [%s] rows from file...', $lines));
 
@@ -54,21 +53,26 @@ class ImporterCommand extends Command
         $bar = $this->output->createProgressBar($lines);
         $accumulator = [];
         $inserted = 0;
-        $keyCount = count($keys);
 
-        while ($source->valid()) {
-            for ($i = 0; $source->valid() && $i < $chunk; $i++) {
-                $data = $this->prepareRow($source->fgets());
-                if (count($data) === $keyCount) {
-                    $accumulator[] = array_combine($keys, $data);
-                }
+        foreach ($iterator as $row) {
+            $accumulator[] = $row;
+
+            // Insert when chunk size is reached
+            if (count($accumulator) >= $chunk) {
+                $count = count($accumulator);
+                $model->insert($accumulator);
+                $bar->advance($count);
+                $inserted += $count;
+                $accumulator = [];
             }
+        }
 
+        // Insert remaining rows
+        if (count($accumulator) > 0) {
             $count = count($accumulator);
             $model->insert($accumulator);
             $bar->advance($count);
             $inserted += $count;
-            $accumulator = [];
         }
 
         $bar->finish();
@@ -84,23 +88,29 @@ class ImporterCommand extends Command
     public function handle(Sepomex $model)
     {
         try {
-            // Source file.
-            $source = $this->getSource();
+            $filePath = config('sepomex.source_file');
+            $inputEncoding = config('sepomex.encoding_input');
+            $outputEncoding = config('sepomex.encoding_output');
 
-            $lines = $this->fileRowCount();
+            // Create iterator, skipping first line (usage & restrictions)
+            $iterator = new DelimitedFileIterator(
+                $filePath,
+                '|',
+                $inputEncoding,
+                $outputEncoding,
+                1
+            );
 
-            // Ignore first line that contain some usages & restrictions.
-            $source->fgets();
+            // Read headers from second line
+            $iterator->readHeaders();
 
-            // Get the columns fields names.
-            $keys = $this->prepareRow($source->fgets());
+            // Count lines (excluding header and first line)
+            $lines = $iterator->countLines() - 1;
 
             $this->truncateTable($model);
 
-            $lines -= 2;
-
             // Starting import.
-            $inserted = $this->startImport($model, $source, $lines, $keys);
+            $inserted = $this->startImport($model, $iterator, $lines);
 
             $info = sprintf("Inserted [%s] rows from [%s] file lines in %s table.\n", $inserted, $lines, $model->getTable());
 
@@ -108,62 +118,5 @@ class ImporterCommand extends Command
         } catch (\Exception $e) {
             $this->error($e->getMessage());
         }
-    }
-
-    /**
-     * Get the total lines from the file.
-     *
-     * @return int
-     */
-    protected function fileRowCount()
-    {
-        $count = 0;
-        $path = config('sepomex.source_file');
-
-        $handle = fopen($path, 'r');
-        while (! feof($handle)) {
-            fgets($handle);
-            $count++;
-        }
-
-        fclose($handle);
-
-        return $count;
-    }
-
-    /**
-     * Get a File Object from the cpdescarga.txt file under package storage directory.
-     *
-     * @return SplFileObject
-     *
-     * @throws \Exception
-     */
-    protected function getSource()
-    {
-        $path = config('sepomex.source_file');
-
-        if (file_exists($path)) {
-            return new SplFileObject($path, 'r');
-        }
-
-        throw new \Exception(sprintf('No source file found on %s, please make sure to download it.', $path));
-    }
-
-    /**
-     * Parse a line from the source file.
-     *
-     * @param  string  $str
-     * @return array
-     */
-    protected function prepareRow($str)
-    {
-        return array_map(
-            function ($value) {
-                $value = trim($value);
-
-                return empty($value) ? null : $value;
-            },
-            explode('|', iconv(config('sepomex.encoding_input'), config('sepomex.encoding_output'), $str))
-        );
     }
 }
