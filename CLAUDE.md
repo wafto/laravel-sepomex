@@ -16,10 +16,10 @@ composer install
 composer test
 
 # Run a single test file
-vendor/bin/phpunit tests/DatabaseRepositoryTest.php
+vendor/bin/pest tests/DatabaseRepositoryTest.php
 
 # Run a single test method
-vendor/bin/phpunit --filter testGetByPostal
+vendor/bin/pest --filter testGetByPostal
 
 # Code formatting with Pint
 composer pint
