@@ -140,8 +140,7 @@ class DelimitedFileIterator implements Iterator
         $count = 0;
         $handle = fopen($this->file->getPathname(), 'r');
 
-        while (! feof($handle)) {
-            fgets($handle);
+        while (fgets($handle) !== false) {
             $count++;
         }
 

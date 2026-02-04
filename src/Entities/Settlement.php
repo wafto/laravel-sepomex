@@ -9,30 +9,15 @@ use Illuminate\Contracts\Support\Arrayable;
  */
 class Settlement implements Arrayable
 {
-    /**
-     * @var string
-     */
-    protected $postal;
+    protected string $postal;
 
-    /**
-     * @var State
-     */
-    protected $state;
+    protected ?State $state = null;
 
-    /**
-     * @var City
-     */
-    protected $city;
+    protected ?City $city = null;
 
-    /**
-     * @var District
-     */
-    protected $district;
+    protected ?District $district = null;
 
-    /**
-     * @var Location
-     */
-    protected $location;
+    protected ?Location $location = null;
 
     public function getPostal(): string
     {
@@ -44,7 +29,7 @@ class Settlement implements Arrayable
         $this->postal = $postal;
     }
 
-    public function getState(): State
+    public function getState(): ?State
     {
         return $this->state;
     }
@@ -54,7 +39,7 @@ class Settlement implements Arrayable
         $this->state = $state;
     }
 
-    public function getCity(): City
+    public function getCity(): ?City
     {
         return $this->city;
     }
@@ -64,7 +49,7 @@ class Settlement implements Arrayable
         $this->city = $city;
     }
 
-    public function getDistrict(): District
+    public function getDistrict(): ?District
     {
         return $this->district;
     }
@@ -74,7 +59,7 @@ class Settlement implements Arrayable
         $this->district = $district;
     }
 
-    public function getLocation(): Location
+    public function getLocation(): ?Location
     {
         return $this->location;
     }
@@ -91,10 +76,10 @@ class Settlement implements Arrayable
     {
         return [
             'postal' => $this->getPostal(),
-            'state' => optional($this->state)->toArray(),
-            'city' => optional($this->city)->toArray(),
-            'district' => optional($this->district)->toArray(),
-            'location' => optional($this->location)->toArray(),
+            'state' => $this->state?->toArray(),
+            'city' => $this->city?->toArray(),
+            'district' => $this->district?->toArray(),
+            'location' => $this->location?->toArray(),
         ];
     }
 }

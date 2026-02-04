@@ -17,73 +17,59 @@ class CreateSepomexTable extends Migration
     public function up()
     {
         Schema::create(config('sepomex.table_name'), function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
 
             $table->string('d_codigo', 8)
                 ->index();
 
             $table->string('d_asenta')
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
             $table->string('d_tipo_asenta', 100)
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
             $table->string('D_mnpio')
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
             $table->string('d_estado', 100)
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
             $table->string('d_ciudad')
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
             $table->string('d_CP', 8)
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
-            $table->integer('c_estado')
+            $table->unsignedInteger('c_estado')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
-            $table->integer('c_oficina')
+            $table->unsignedInteger('c_oficina')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
-            $table->integer('c_CP')
+            $table->unsignedInteger('c_CP')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
-            $table->integer('c_tipo_asenta')
+            $table->unsignedInteger('c_tipo_asenta')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
-            $table->integer('c_mnpio')
+            $table->unsignedInteger('c_mnpio')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
-            $table->integer('id_asenta_cpcons')
+            $table->unsignedInteger('id_asenta_cpcons')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
 
             $table->string('d_zona', 100)
-                ->nullable()
-                ->default(null);
+                ->nullable();
 
-            $table->integer('c_cve_ciudad')
+            $table->unsignedInteger('c_cve_ciudad')
                 ->nullable()
-                ->index()
-                ->unsigned();
+                ->index();
         });
     }
 

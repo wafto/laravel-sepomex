@@ -36,7 +36,7 @@ class CachedRepository implements SepomexContract
     {
         $hash = sprintf('%s.%s', config('sepomex.table_name'), $postal);
 
-        return $this->cache->rememberForever($hash, function () use ($postal) {
+        return $this->cache->tags(['sepomex'])->rememberForever($hash, function () use ($postal) {
             return $this->next->getByPostal($postal);
         });
     }
@@ -48,7 +48,7 @@ class CachedRepository implements SepomexContract
     {
         $hash = sprintf('%s.states', config('sepomex.table_name'));
 
-        return $this->cache->rememberForever($hash, function () {
+        return $this->cache->tags(['sepomex'])->rememberForever($hash, function () {
             return $this->next->getStates();
         });
     }

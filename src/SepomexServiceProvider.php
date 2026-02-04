@@ -6,6 +6,7 @@ use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Support\ServiceProvider;
 use Wafto\Sepomex\Console\ImporterCommand;
 use Wafto\Sepomex\Contracts\SepomexContract;
+use Wafto\Sepomex\Models\Sepomex;
 use Wafto\Sepomex\Repositories\CachedRepository;
 use Wafto\Sepomex\Repositories\DatabaseRepository;
 
@@ -46,7 +47,7 @@ class SepomexServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($configPath, 'sepomex');
 
         $this->app->singleton(SepomexContract::class, function ($app) {
-            return new CachedRepository(new DatabaseRepository, $app[CacheRepository::class]);
+            return new CachedRepository(new DatabaseRepository(new Sepomex), $app[CacheRepository::class]);
         });
     }
 }

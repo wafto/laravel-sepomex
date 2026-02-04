@@ -25,8 +25,8 @@ return [
     | Encoding input
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the encoding of the source.
-    | At the time (2022) sepomex uses "utf-8"
+    | Here you may specify the encoding of the source file.
+    | The default SEPOMEX file uses "iso-8859-1".
     |
     */
     'encoding_input' => 'iso-8859-1',

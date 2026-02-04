@@ -9,55 +9,24 @@ use Illuminate\Contracts\Support\Arrayable;
  */
 class State implements Arrayable
 {
-    /**
-     * State constructor.
-     */
+    protected int $id;
+
+    protected string $name;
+
     public function __construct(int $id, string $name)
     {
-        $this->setId($id);
-        $this->setName($name);
+        $this->id = $id;
+        $this->name = $name;
     }
 
-    /**
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * @return mixed
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param  mixed  $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getName(): string
     {
         return $this->name;
-    }
-
-    /**
-     * @param  mixed  $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
     }
 
     /**

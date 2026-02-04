@@ -3,6 +3,7 @@
 namespace Wafto\Sepomex\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Cache;
 use Wafto\Sepomex\Models\Sepomex;
 use Wafto\Sepomex\Support\DelimitedFileIterator;
 
@@ -115,8 +116,13 @@ class ImporterCommand extends Command
             $info = sprintf("Inserted [%s] rows from [%s] file lines in %s table.\n", $inserted, $lines, $model->getTable());
 
             $this->info($info);
+
+            Cache::tags(['sepomex'])->flush();
+            $this->info('Cache cleared.');
         } catch (\Exception $e) {
             $this->error($e->getMessage());
+
+            return 1;
         }
     }
 }

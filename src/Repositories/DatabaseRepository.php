@@ -11,12 +11,16 @@ use Wafto\Sepomex\Models\Sepomex;
  */
 class DatabaseRepository implements SepomexContract
 {
+    public function __construct(
+        protected Sepomex $model
+    ) {}
+
     /**
      * {@inheritdoc}
      */
     public function getByPostal(string $postal): array
     {
-        return Sepomex::postalCode($postal)
+        return $this->model->postalCode($postal)
             ->get()
             ->map(function (Sepomex $item) {
                 return $item->toEntity();
@@ -29,7 +33,7 @@ class DatabaseRepository implements SepomexContract
      */
     public function getStates(): array
     {
-        return Sepomex::select(['c_estado', 'd_estado'])
+        return $this->model->select(['c_estado', 'd_estado'])
             ->distinct()
             ->get()
             ->map(function ($row) {
