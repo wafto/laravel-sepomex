@@ -16,6 +16,12 @@ class CachedRepository implements SepomexContract
 
     public function getByPostal(string $postal): array
     {
+        // Reject anything that is not a postal code before it reaches the
+        // cache, so arbitrary input cannot create unbounded cache entries.
+        if (! preg_match('/^\d{5}\z/', $postal)) {
+            return [];
+        }
+
         return $this->remember("postal.{$postal}", fn () => $this->next->getByPostal($postal));
     }
 

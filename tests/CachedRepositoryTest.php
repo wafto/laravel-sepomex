@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Cache\Repository;
+use Wafto\Sepomex\Contracts\SepomexContract;
 use Wafto\Sepomex\Models\Sepomex;
 use Wafto\Sepomex\Repositories\CachedRepository;
 use Wafto\Sepomex\Repositories\DatabaseRepository;
@@ -58,4 +59,25 @@ it('flushes the cache after importing', function () {
     $this->artisan('sepomex:import', ['--chunk' => '50'])->assertExitCode(0);
 
     expect(cache()->get('sepomex.sepomex.version'))->toBe(2);
+});
+
+it('does not query or cache invalid postal codes', function (string $postal) {
+    $next = Mockery::mock(SepomexContract::class);
+    $next->shouldNotReceive('getByPostal');
+
+    $cache = app(Repository::class);
+    $repo = new CachedRepository($next, $cache);
+
+    expect($repo->getByPostal($postal))->toBe([])
+        ->and($cache->has("sepomex.sepomex.v1.postal.{$postal}"))->toBeFalse();
+})->with(['1159', '115900', 'abcde', ' 11590', '11590 ', '', '1159a', "11590\n"]);
+
+it('caches valid postal codes that do not exist', function () {
+    $next = Mockery::mock(SepomexContract::class);
+    $next->shouldReceive('getByPostal')->once()->with('99999')->andReturn([]);
+
+    $repo = new CachedRepository($next, app(Repository::class));
+
+    expect($repo->getByPostal('99999'))->toBe([])
+        ->and($repo->getByPostal('99999'))->toBe([]);
 });
