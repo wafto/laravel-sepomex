@@ -22,7 +22,8 @@ interface SepomexContract
     /**
      * Get the settlements that correspond to the postal code.
      *
-     * Returns an empty array when the postal code does not exist.
+     * Returns an empty array when the postal code does not exist or is
+     * not a 5-digit code.
      *
      * @return list<SettlementArray>
      */
