@@ -10,8 +10,8 @@ Laravel Sepomex is a package that provides Mexican postal code ([SEPOMEX](https:
 
 ## Requirements
 
-- PHP 8.2+
-- Laravel 10, 11, or 12
+- PHP 8.2+ (8.3+ for Laravel 13)
+- Laravel 11, 12, or 13
 
 ## Installation
 
