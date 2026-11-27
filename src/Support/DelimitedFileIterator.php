@@ -39,6 +39,11 @@ class DelimitedFileIterator implements Iterator
     protected int $currentLine = 0;
 
     /**
+     * Physical line number of the last line read from the file.
+     */
+    protected int $lineNumber = 0;
+
+    /**
      * Current row data.
      */
     protected ?array $currentRow = null;
@@ -57,6 +62,11 @@ class DelimitedFileIterator implements Iterator
      * Whether to return associative arrays.
      */
     protected bool $associative = false;
+
+    /**
+     * Whether the headers were read from the file (and must be skipped on rewind).
+     */
+    protected bool $headersFromFile = false;
 
     /**
      * Create a new DelimitedFileIterator instance.
@@ -86,12 +96,7 @@ class DelimitedFileIterator implements Iterator
         $this->outputEncoding = $outputEncoding;
         $this->skipLines = $skipLines;
 
-        // Skip initial lines if specified
-        for ($i = 0; $i < $this->skipLines; $i++) {
-            if (! $this->file->eof()) {
-                $this->file->fgets();
-            }
-        }
+        $this->skipInitialLines();
     }
 
     /**
@@ -104,6 +109,7 @@ class DelimitedFileIterator implements Iterator
     {
         $this->headers = $headers;
         $this->associative = true;
+        $this->headersFromFile = false;
 
         return $this;
     }
@@ -115,10 +121,12 @@ class DelimitedFileIterator implements Iterator
      */
     public function readHeaders(): self
     {
-        if (! $this->file->eof()) {
-            $line = $this->file->fgets();
+        $line = $this->readLine();
+
+        if ($line !== null) {
             $this->headers = $this->parseLine($line);
             $this->associative = true;
+            $this->headersFromFile = true;
         }
 
         return $this;
@@ -150,23 +158,52 @@ class DelimitedFileIterator implements Iterator
     }
 
     /**
+     * Read the next physical line, or null at end of file.
+     */
+    protected function readLine(): ?string
+    {
+        if ($this->file->eof()) {
+            return null;
+        }
+
+        $line = $this->file->fgets();
+        $this->lineNumber++;
+
+        return $line === false ? null : $line;
+    }
+
+    protected function skipInitialLines(): void
+    {
+        for ($i = 0; $i < $this->skipLines; $i++) {
+            $this->readLine();
+        }
+    }
+
+    /**
      * Parse a line from the file.
      *
-     * @param  string  $line  The line to parse
+     * @throws \UnexpectedValueException
      */
     protected function parseLine(string $line): array
     {
-        // Convert encoding
-        $line = iconv($this->inputEncoding, $this->outputEncoding, $line);
+        $converted = @iconv($this->inputEncoding, $this->outputEncoding, $line);
 
-        // Split by delimiter and clean values
+        if ($converted === false) {
+            throw new \UnexpectedValueException(sprintf(
+                'Unable to convert line %d from %s to %s.',
+                $this->lineNumber,
+                $this->inputEncoding,
+                $this->outputEncoding,
+            ));
+        }
+
         return array_map(
-            function ($value) {
+            function (string $value) {
                 $value = trim($value);
 
-                return empty($value) ? null : $value;
+                return $value === '' ? null : $value;
             },
-            explode($this->delimiter, $line)
+            explode($this->delimiter, $converted)
         );
     }
 
@@ -179,30 +216,47 @@ class DelimitedFileIterator implements Iterator
     }
 
     /**
-     * Move forward to next element.
+     * Move forward to next element, skipping blank lines.
+     *
+     * @throws \UnexpectedValueException
      */
     public function next(): void
     {
-        if (! $this->file->eof()) {
-            $line = $this->file->fgets();
+        $this->currentRow = null;
 
-            if ($line !== false && trim($line) !== '') {
-                $row = $this->parseLine($line);
-
-                // Convert to associative array if headers are set
-                if ($this->associative && $this->headers !== null && count($row) === count($this->headers)) {
-                    $this->currentRow = array_combine($this->headers, $row);
-                } else {
-                    $this->currentRow = $row;
-                }
-            } else {
-                $this->currentRow = null;
+        while (($line = $this->readLine()) !== null) {
+            if (trim($line) === '') {
+                continue;
             }
 
+            $this->currentRow = $this->toRow($this->parseLine($line));
             $this->currentLine++;
-        } else {
-            $this->currentRow = null;
+
+            return;
         }
+    }
+
+    /**
+     * Combine the values with the headers when in associative mode.
+     *
+     * @throws \UnexpectedValueException
+     */
+    protected function toRow(array $values): array
+    {
+        if (! $this->associative || $this->headers === null) {
+            return $values;
+        }
+
+        if (count($values) !== count($this->headers)) {
+            throw new \UnexpectedValueException(sprintf(
+                'Line %d has %d columns, expected %d.',
+                $this->lineNumber,
+                count($values),
+                count($this->headers),
+            ));
+        }
+
+        return array_combine($this->headers, $values);
     }
 
     /**
@@ -227,21 +281,15 @@ class DelimitedFileIterator implements Iterator
     public function rewind(): void
     {
         $this->file->rewind();
+        $this->lineNumber = 0;
         $this->currentLine = 0;
         $this->currentRow = null;
 
-        // Skip initial lines again
-        for ($i = 0; $i < $this->skipLines; $i++) {
-            if (! $this->file->eof()) {
-                $this->file->fgets();
-            }
-        }
+        $this->skipInitialLines();
 
-        // If headers were read, skip them again
-        if ($this->associative && $this->headers !== null) {
-            if (! $this->file->eof()) {
-                $this->file->fgets();
-            }
+        // If headers were read from the file, skip them again
+        if ($this->headersFromFile) {
+            $this->readLine();
         }
 
         // Load first row

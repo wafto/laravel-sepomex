@@ -45,3 +45,18 @@ it('keeps existing data when the import fails', function () {
 
     expect(Sepomex::query()->count())->toBe($before);
 });
+
+it('fails without touching existing data when the file has a malformed row', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50'])->assertExitCode(0);
+    $before = Sepomex::query()->count();
+
+    $path = tempnam(sys_get_temp_dir(), 'sepomex');
+    file_put_contents($path, implode("\n", array_slice(file(__DIR__.'/files/test.txt', FILE_IGNORE_NEW_LINES), 0, 5))."\n01000|extra|columns\n");
+    config(['sepomex.source_file' => $path]);
+
+    $this->artisan('sepomex:import', ['--chunk' => '2'])
+        ->expectsOutput('Line 6 has 3 columns, expected 15.')
+        ->assertExitCode(1);
+
+    expect(Sepomex::query()->count())->toBe($before);
+});
