@@ -121,10 +121,38 @@ $settlements = $sepomex->getByPostal('06600');
 
 ## API Methods
 
-| Method | Description |
-|--------|-------------|
-| `getByPostal(string $postal)` | Returns all settlements matching the given postal code |
-| `getStates()` | Returns a list of all Mexican states |
+| Method | Returns |
+|--------|---------|
+| `getByPostal(string $postal)` | A list of settlements for the postal code, or an empty array if it does not exist |
+| `getStates()` | A list of all Mexican states |
+
+Both methods return plain arrays (not entity objects), so results can be returned from a controller as JSON or cached as-is.
+
+`getByPostal('11590')` returns:
+
+```php
+[
+    [
+        'postal' => '11590',
+        'state' => ['id' => 9, 'name' => 'Ciudad de México'],
+        'city' => ['id' => 11, 'name' => 'Ciudad de México'],
+        'district' => ['id' => 16, 'name' => 'Miguel Hidalgo'],
+        'location' => ['type' => 'Colonia', 'name' => 'Anzures'],
+    ],
+]
+```
+
+`state`, `city`, `district` and `location` are `null` when the source data does not provide them.
+
+`getStates()` returns:
+
+```php
+[
+    ['id' => 1, 'name' => 'Aguascalientes'],
+    ['id' => 2, 'name' => 'Baja California'],
+    // ...
+]
+```
 
 ## Important Notes
 
