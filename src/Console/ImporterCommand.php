@@ -120,7 +120,7 @@ class ImporterCommand extends Command
 
             $cache->flush();
             $this->info('Cache cleared.');
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             $this->error($e->getMessage());
 
             return 1;
