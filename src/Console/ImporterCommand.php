@@ -27,15 +27,14 @@ class ImporterCommand extends Command
     protected $description = 'Imports sepomex data from the txt file provided by "Correos de México".';
 
     /**
-     * Truncate database data.
-     *
-     * @return void
+     * Delete existing rows. Uses delete() instead of truncate() because
+     * truncate causes an implicit commit on MySQL and cannot be rolled back.
      */
-    protected function truncateTable(Sepomex $model)
+    protected function clearTable(Sepomex $model): void
     {
-        $this->comment('Truncating table...');
-        $model->truncate();
-        $this->info('Table truncated.');
+        $this->comment('Clearing table...');
+        $model->newQuery()->delete();
+        $this->info('Table cleared.');
     }
 
     /**
@@ -108,10 +107,12 @@ class ImporterCommand extends Command
             // Count lines (excluding header and first line)
             $lines = $iterator->countLines() - 1;
 
-            $this->truncateTable($model);
+            // Clear and import atomically so a failure keeps the existing data.
+            $inserted = $model->getConnection()->transaction(function () use ($model, $iterator, $lines) {
+                $this->clearTable($model);
 
-            // Starting import.
-            $inserted = $this->startImport($model, $iterator, $lines);
+                return $this->startImport($model, $iterator, $lines);
+            });
 
             $info = sprintf("Inserted [%s] rows from [%s] file lines in %s table.\n", $inserted, $lines, $model->getTable());
 
