@@ -23,3 +23,39 @@ it('returns states array', function () {
 
     expect($states)->toHaveCount(3);
 });
+
+it('works with cache stores that do not support tags', function () {
+    config(['sepomex.cache.store' => 'file']);
+    $this->artisan('sepomex:import', ['--chunk' => '50'])->assertExitCode(0);
+
+    $repo = app(CachedRepository::class);
+
+    expect($repo->getStates())->toHaveCount(3)
+        ->and($repo->getByPostal('11590'))->not->toBeEmpty();
+
+    cache()->store('file')->flush();
+});
+
+it('serves stale data until flushed', function () {
+    $this->artisan('sepomex:import', ['--chunk' => '50']);
+
+    $repo = app(CachedRepository::class);
+    expect($repo->getStates())->toHaveCount(3);
+
+    Sepomex::query()->insert(['d_codigo' => '99999', 'c_estado' => 99, 'd_estado' => 'Nuevo']);
+    expect($repo->getStates())->toHaveCount(3);
+
+    $repo->flush();
+    expect($repo->getStates())->toHaveCount(4);
+});
+
+it('flushes the cache after importing', function () {
+    $repo = app(CachedRepository::class);
+    $repo->getStates();
+
+    expect(cache()->get('sepomex.sepomex.version'))->toBe(1);
+
+    $this->artisan('sepomex:import', ['--chunk' => '50'])->assertExitCode(0);
+
+    expect(cache()->get('sepomex.sepomex.version'))->toBe(2);
+});

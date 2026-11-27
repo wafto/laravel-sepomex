@@ -40,4 +40,19 @@ return [
     |
     */
     'encoding_output' => 'utf-8',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache
+    |--------------------------------------------------------------------------
+    |
+    | "store" is the cache store used for lookups (null uses the default store).
+    | "ttl" is the lifetime in seconds of cached lookups (null caches forever).
+    | Any cache driver is supported; tags are not required.
+    |
+    */
+    'cache' => [
+        'store' => env('SEPOMEX_CACHE_STORE'),
+        'ttl' => env('SEPOMEX_CACHE_TTL'),
+    ],
 ];

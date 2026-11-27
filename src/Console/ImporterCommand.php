@@ -3,8 +3,8 @@
 namespace Wafto\Sepomex\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Cache;
 use Wafto\Sepomex\Models\Sepomex;
+use Wafto\Sepomex\Repositories\CachedRepository;
 use Wafto\Sepomex\Support\DelimitedFileIterator;
 
 /**
@@ -86,7 +86,7 @@ class ImporterCommand extends Command
      *
      * @return void
      */
-    public function handle(Sepomex $model)
+    public function handle(Sepomex $model, CachedRepository $cache)
     {
         try {
             $filePath = config('sepomex.source_file');
@@ -117,7 +117,7 @@ class ImporterCommand extends Command
 
             $this->info($info);
 
-            Cache::tags(['sepomex'])->flush();
+            $cache->flush();
             $this->info('Cache cleared.');
         } catch (\Exception $e) {
             $this->error($e->getMessage());

@@ -2,7 +2,6 @@
 
 namespace Wafto\Sepomex;
 
-use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Support\ServiceProvider;
 use Wafto\Sepomex\Console\ImporterCommand;
 use Wafto\Sepomex\Contracts\SepomexContract;
@@ -46,8 +45,16 @@ class SepomexServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom($configPath, 'sepomex');
 
-        $this->app->singleton(SepomexContract::class, function ($app) {
-            return new CachedRepository(new DatabaseRepository(new Sepomex), $app[CacheRepository::class]);
+        $this->app->singleton(CachedRepository::class, function ($app) {
+            $ttl = $app['config']->get('sepomex.cache.ttl');
+
+            return new CachedRepository(
+                new DatabaseRepository(new Sepomex),
+                $app['cache']->store($app['config']->get('sepomex.cache.store')),
+                $ttl === null ? null : (int) $ttl,
+            );
         });
+
+        $this->app->alias(CachedRepository::class, SepomexContract::class);
     }
 }
