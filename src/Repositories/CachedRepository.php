@@ -2,54 +2,58 @@
 
 namespace Wafto\Sepomex\Repositories;
 
+use Closure;
 use Illuminate\Contracts\Cache\Repository;
 use Wafto\Sepomex\Contracts\SepomexContract;
 
-/**
- * Class CachedRepository.
- */
 class CachedRepository implements SepomexContract
 {
-    /**
-     * @var SepomexContract
-     */
-    protected $next;
+    public function __construct(
+        protected SepomexContract $next,
+        protected Repository $cache,
+        protected ?int $ttl = null,
+    ) {}
 
-    /**
-     * @var Repository
-     */
-    protected $cache;
-
-    /**
-     * CachedRepository constructor.
-     */
-    public function __construct(SepomexContract $next, Repository $cache)
-    {
-        $this->next = $next;
-        $this->cache = $cache;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getByPostal(string $postal): array
     {
-        $hash = sprintf('%s.%s', config('sepomex.table_name'), $postal);
+        return $this->remember("postal.{$postal}", fn () => $this->next->getByPostal($postal));
+    }
 
-        return $this->cache->tags(['sepomex'])->rememberForever($hash, function () use ($postal) {
-            return $this->next->getByPostal($postal);
-        });
+    public function getStates(): array
+    {
+        return $this->remember('states', fn () => $this->next->getStates());
     }
 
     /**
-     * {@inheritdoc}
+     * Invalidate all cached entries by bumping the key version.
+     *
+     * Works on every cache driver, unlike tags which are only
+     * supported by taggable stores (redis, memcached, array).
      */
-    public function getStates(): array
+    public function flush(): void
     {
-        $hash = sprintf('%s.states', config('sepomex.table_name'));
+        $this->cache->forever($this->versionKey(), $this->version() + 1);
+    }
 
-        return $this->cache->tags(['sepomex'])->rememberForever($hash, function () {
-            return $this->next->getStates();
-        });
+    protected function remember(string $key, Closure $callback): array
+    {
+        $key = sprintf('%s.v%d.%s', $this->prefix(), $this->version(), $key);
+
+        return $this->cache->remember($key, $this->ttl, $callback);
+    }
+
+    protected function version(): int
+    {
+        return (int) $this->cache->rememberForever($this->versionKey(), fn () => 1);
+    }
+
+    protected function versionKey(): string
+    {
+        return "{$this->prefix()}.version";
+    }
+
+    protected function prefix(): string
+    {
+        return 'sepomex.'.config('sepomex.table_name');
     }
 }
